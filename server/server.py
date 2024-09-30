@@ -23,13 +23,20 @@ logging.basicConfig(
 # Initialize SQLite database
 with sqlite3.connect('responses.db') as conn:
     cursor = conn.cursor()
-    # Create a table if it doesn't exist
+    # Create tables if not existent
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS user_interactions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             user_input TEXT,
             llm_response TEXT,
             user_correction TEXT
+        )
+    ''')
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS queries (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            query TEXT,
+            response TEXT
         )
     ''')
     conn.commit()
@@ -62,6 +69,22 @@ def generate_response(user_input):
         gr.Warning(f"Error generating response: {e}")
         return f"Error generating response: {e}"
 
+def store_query(user_input, llm_response: str):
+    if llm_response.startswith("Error generating response"):
+        logging.warning("Malformed response NOT stored")
+        return
+    try:
+        with sqlite3.connect('responses.db') as conn:
+            cursor = conn.cursor()
+            cursor.execute('''
+                INSERT INTO queries (query, response)
+                VALUES (?, ?)
+            ''', (user_input, llm_response))
+            conn.commit()
+        logging.info("Query and response stored")
+    except Exception as e:
+        logging.error(f"DB Query Store {user_input}, {llm_response}, {e}")
+
 # Function to handle the interaction and save to the database
 def handle_interaction(user_input, llm_response, user_correction):
     try:
@@ -82,8 +105,10 @@ def handle_interaction(user_input, llm_response, user_correction):
 def main_function(user_input):
     llm_response = generate_response(user_input)
     torch.cuda.empty_cache()
+    store_query(user_input, llm_response)
+    markdown_link = f'<a href="https://mygene.info{llm_response}" target="_blank">Test Response Link</a>'
     logging.info("LLM response sent successfully")
-    return llm_response, ""
+    return llm_response, markdown_link, ""
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -107,8 +132,15 @@ if __name__ == "__main__":
                     3. Otherwise, provide the correct output in `box 3` in the form `/v3/query...` or `/v3/gene...` etc. Hit the `Save Correction` button.
                     4. Refresh the page!""")
         
+        gr.Markdown("## Sample Queries")
+        gr.Markdown("""1. find the gene ontology info for CDK2
+                    2. give me the reactome pathway information about the mouse gene cdk2
+                    3. give me uniprot id of the gene with the entrez gene id of 1017
+                    4. What are the symbol and Ensembl gene ID for genes in species 9669 with a symbol starting with 'LOC123388108'?""")
+        
         user_input = gr.Textbox(label="Enter your query")
         llm_response = gr.Textbox(label="LLM Response", interactive=False)
+        url_display = gr.Markdown(label="Link")
         user_correction = gr.Textbox(label="Uesr-corrected Response (if needed), like `/v3/query...` or `/v3/gene...` etc")
 
         submit_button = gr.Button("Generate Response")
@@ -116,7 +148,8 @@ if __name__ == "__main__":
         # save_message = gr.Textbox(label="Status Message", interactive=False)
 
         # Define actions on button click
-        submit_button.click(main_function, inputs=[user_input], outputs=[llm_response, user_correction])
+        user_input.submit(main_function, inputs=[user_input], outputs=[llm_response, url_display, user_correction])
+        submit_button.click(main_function, inputs=[user_input], outputs=[llm_response, url_display, user_correction])
         save_button.click(handle_interaction, inputs=[user_input, llm_response, user_correction])
 
     demo.queue().launch(server_name=args.host,
