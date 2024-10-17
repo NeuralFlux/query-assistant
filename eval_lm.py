@@ -108,34 +108,17 @@ print("Start", prompt[:250])
 print("End", prompt[-150:])
 
 
-# #### Deprecated
-
-import inspect
-prompt_template = inspect.cleandoc("""
-<|begin_of_text|><|start_header_id|>system<|end_header_id|>
-Use the documentation and schema to complete the user-given task.
-Docs: {docs}\n Schema: {description}<|eot_id|><|start_header_id|>user<|end_header_id|>
-{instruction}. Write an API call.
-<|eot_id|><|start_header_id|>assistant<|end_header_id|>
-""")
-
-
-prompt_gen = lambda inst: prompt_template.format(docs=docs, description=description, instruction=inst)
-prompt = prompt_gen("Find the UniProt ID for the ENSG00000103187 gene in human. Limit the search to Ensembl gene IDs.")
-print("Start", prompt[:250])
-print("End", prompt[-150:])
-
-
 # #### Latest
 
 import outlines
 from peft import PeftModel
 
-model_path = "models/meta_llama3_1"
-adapter_path = "models/ft/qlora_train_split/adapter"
-model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16)
-# model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16, output_attentions=True).to("cuda")
-model = PeftModel.from_pretrained(model, adapter_path, torch_dtype=torch.bfloat16, output_attentions=True).to("cuda")
+# model_path = "models/meta_llama3_1"
+model_path = "models/meta_llama3_2"
+# adapter_path = "models/ft/qlora_train_split/adapter"
+# model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16)
+model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16, output_attentions=True).to("cuda")
+# model = PeftModel.from_pretrained(model, adapter_path, torch_dtype=torch.bfloat16, output_attentions=True).to("cuda")
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model.eval()
 
@@ -144,12 +127,12 @@ def evaluate(api_call: str):
     return None
 
 model = outlines.models.Transformers(model, tokenizer)
-generator = outlines.generate.json(model, evaluate)
-# generator = outlines.generate.regex(model, r"/v3/.+/.+")
+# generator = outlines.generate.json(model, evaluate)
+generator = outlines.generate.regex(model, r"/v3/query/.+")
 
 
-sample_api_call = generator([prompt])
-sample_api_call
+sample_api_call = generator([prompt], max_tokens=512)
+print(f"Sample API Call: {sample_api_call}")
 
 
 # ## Part 3: Evaluate
@@ -158,7 +141,6 @@ from datasets import load_dataset
 
 dataset = load_dataset("moltres23/biothings-query-instruction-pairs")
 train_set, test_set = dataset["train"], dataset["test"]
-train_set
 
 
 import tqdm
@@ -176,41 +158,17 @@ with torch.no_grad():
         icl_examples = [dict(zip(train_set[icl_example_indices].keys(), values)) for values in zip(*train_set[icl_example_indices].values())]
 
         batch = test_set[idx:(idx + BATCH_SIZE)]
-        # batched_inputs = list(map(few_shot_prompt, batch["instruction"], [icl_examples], [docs], [description]))
-        batched_inputs = list(map(default_prompt, batch["instruction"], [docs], [description]))
-        batch_responses = generator(batched_inputs)
-        all_responses.extend(batch_responses.values())
+        batched_inputs = list(map(few_shot_prompt, batch["instruction"], [icl_examples], [docs], [description]))
+        # batched_inputs = list(map(default_prompt, batch["instruction"], [docs], [description]))
+        batch_responses = generator(batched_inputs, max_tokens=512)
+        if idx == 0:
+            print(f"RESP: \n{batch_responses}")
+        # all_responses.extend(batch_responses.values())
+        all_responses.extend(batch_responses)
 
 
 import pickle
 
 
-with open('responses.pkl', 'wb') as fd:
+with open('responses_llama3b_icl.pkl', 'wb') as fd:
    pickle.dump(all_responses, fd)
-
-
-with open('responses.pkl', 'rb') as fd:
-   all_responses = pickle.load(fd)
-
-
-# NOTE: using regex match to get the response in the expected format
-import re
-def regex_match(string):
-    match = re.search(r"/v3/.+", string)
-    return match.group(0) if match is not None else ""
-
-
-regex_match("GET https://mygene.infov3/query?fields=human")
-
-
-all_responses = list(map(lambda x: regex_match(x), all_responses))
-ast_eval = score_ast_batched(all_responses, test_set["output"])
-bertscore_evals = bert_score_fn(all_responses, test_set["output"])
-
-
-import numpy as np
-
-# we include 0s in mean because otherwise merely getting
-# one correct answer will skew the metric
-print("AST eval", ast_eval)
-print("BERT Score", np.mean(bertscore_evals["recall"]))
