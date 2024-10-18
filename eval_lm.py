@@ -5,6 +5,8 @@
 
 from urllib.parse import urlparse, parse_qs
 
+import outlines.samplers
+
 def parse_url(url):
     """
     Parse a URL into its components.
@@ -101,12 +103,32 @@ API Call: {{ example.output }}
 {% endfor %}
 <|eot_id|><|start_header_id|>assistant<|end_header_id|>"""
 
+@outlines.prompt
+def rag_prompt(instruction, docs, relevant_schema):
+    """
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+Use the documentation and schema to complete the user-given task.
+Docs: {{ docs }}\n Schema: {{ relevant_schema }}\n<|eot_id|><|start_header_id|>user<|end_header_id|>
+{{ instruction }}. Write an API call.
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>"""
 
-inst = "Find the UniProt ID for the ENSG00000103187 gene in human. Limit the search to Ensembl gene IDs."
-prompt = default_prompt(inst, docs, description)
-print("Start", prompt[:250])
-print("End", prompt[-150:])
+@outlines.prompt
+def few_shot_with_rag(instruction, examples, docs, relevant_schema):
+    """
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+Use the documentation and schema to complete the user-given task.
+Docs: {{ docs }}\n Schema: {{ relevant_schema }}\n<|eot_id|><|start_header_id|>user<|end_header_id|>
+{{ instruction }}. Write an API call.
 
+Examples
+--------
+
+{% for example in examples %}
+Query: {{ example.instruction }}
+API Call: {{ example.output }}
+
+{% endfor %}
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>"""
 
 # #### Latest
 
@@ -116,9 +138,9 @@ from peft import PeftModel
 # model_path = "models/meta_llama3_1"
 model_path = "models/meta_llama3_2"
 # adapter_path = "models/ft/qlora_train_split/adapter"
-# model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16)
 model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16, output_attentions=True).to("cuda")
-# model = PeftModel.from_pretrained(model, adapter_path, torch_dtype=torch.bfloat16, output_attentions=True).to("cuda")
+# model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16)
+# model = PeftModel.from_pretrained(model, adapter_path, torch_dtype=torch.bfloat16, output_attentions=True, weights_only=True).to("cuda")
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model.eval()
 
@@ -127,13 +149,9 @@ def evaluate(api_call: str):
     return None
 
 model = outlines.models.Transformers(model, tokenizer)
-# generator = outlines.generate.json(model, evaluate)
-generator = outlines.generate.regex(model, r"/v3/query/.+")
-
-
-sample_api_call = generator([prompt], max_tokens=512)
-print(f"Sample API Call: {sample_api_call}")
-
+# sampler = outlines.samplers.greedy()
+generator = outlines.generate.json(model, evaluate)
+# generator = outlines.generate.regex(model, r"/v3/query/.*", sampler)
 
 # ## Part 3: Evaluate
 
@@ -145,9 +163,21 @@ train_set, test_set = dataset["train"], dataset["test"]
 
 import tqdm
 import random
+from langchain_community.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+
+embedding_model_name = 'Snowflake/snowflake-arctic-embed-l'
+model_kwargs = {"device": "cuda:1"}
+embeddings = HuggingFaceEmbeddings(model_name=embedding_model_name, model_kwargs=model_kwargs)
+
+vectorstore = FAISS.load_local(folder_path="data/rag", index_name="faiss_index", embeddings=embeddings, allow_dangerous_deserialization=True)
+retriever = vectorstore.as_retriever(search_kwargs={"k": 16})
+
+def process_retrieved_docs(doc_batches):
+    return ["\n\n".join([doc.page_content for doc in doc_batch]) for doc_batch in doc_batches]
 
 random.seed(42)
-BATCH_SIZE = 1
+BATCH_SIZE = 1  # more than 1 not supported
 N_SHOT = 10  # size of ICL examples
 all_responses = []
 
@@ -158,17 +188,21 @@ with torch.no_grad():
         icl_examples = [dict(zip(train_set[icl_example_indices].keys(), values)) for values in zip(*train_set[icl_example_indices].values())]
 
         batch = test_set[idx:(idx + BATCH_SIZE)]
-        batched_inputs = list(map(few_shot_prompt, batch["instruction"], [icl_examples], [docs], [description]))
+        doc_batches = retriever.batch(batch["instruction"])  # rag
+
+        # batched_inputs = list(map(few_shot_prompt, batch["instruction"], [icl_examples], [docs], [description]))
         # batched_inputs = list(map(default_prompt, batch["instruction"], [docs], [description]))
-        batch_responses = generator(batched_inputs, max_tokens=512)
+        # batched_inputs = list(map(few_shot_with_rag, batch["instruction"], [icl_examples], [docs], process_retrieved_docs(doc_batches)))
+        batched_inputs = list(map(rag_prompt, batch["instruction"], [docs], process_retrieved_docs(doc_batches)))
         if idx == 0:
-            print(f"RESP: \n{batch_responses}")
-        # all_responses.extend(batch_responses.values())
-        all_responses.extend(batch_responses)
+            print(f"\nDemo Input: {batched_inputs}\n")
+
+        batch_responses = generator(batched_inputs)
+        all_responses.extend(batch_responses.values())
+        # all_responses.append(batch_responses)
 
 
 import pickle
 
-
-with open('responses_llama3b_icl.pkl', 'wb') as fd:
+with open('responses_llama3b_rag.pkl', 'wb') as fd:
    pickle.dump(all_responses, fd)
