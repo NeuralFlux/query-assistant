@@ -135,12 +135,12 @@ API Call: {{ example.output }}
 import outlines
 from peft import PeftModel
 
-# model_path = "models/meta_llama3_1"
-model_path = "models/meta_llama3_2"
-# adapter_path = "models/ft/qlora_train_split/adapter"
-model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16, output_attentions=True).to("cuda")
-# model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16)
-# model = PeftModel.from_pretrained(model, adapter_path, torch_dtype=torch.bfloat16, output_attentions=True, weights_only=True).to("cuda")
+model_path = "models/meta_llama3_1"
+adapter_path = "models/ft/qlora_train_split/adapter"
+# adapter_path = "models/ft/lora_train_split_3b/checkpoint-713"
+# model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16, output_attentions=True).to("cuda")
+model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16)
+model = PeftModel.from_pretrained(model, adapter_path, torch_dtype=torch.bfloat16, output_attentions=True, weights_only=True).to("cuda")
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model.eval()
 
@@ -148,17 +148,33 @@ model.eval()
 def evaluate(api_call: str):
     return None
 
+json_schema = """
+{
+  "title": "response",
+  "description": "chatbot response",
+  "type": "object",
+  "properties": {
+    "api_call": {
+      "type": "string",
+      "description": "Query for MyGene",
+      "maxLength": 256
+    }
+  }
+}
+"""
+
 model = outlines.models.Transformers(model, tokenizer)
 # sampler = outlines.samplers.greedy()
-generator = outlines.generate.json(model, evaluate)
+generator = outlines.generate.json(model, json_schema)
 # generator = outlines.generate.regex(model, r"/v3/query/.*", sampler)
+# generator = outlines.generate.regex(model, r"/v3/query/.*")
 
 # ## Part 3: Evaluate
 
 from datasets import load_dataset
 
-dataset = load_dataset("moltres23/biothings-query-instruction-pairs")
-train_set, test_set = dataset["train"], dataset["test"]
+train_set = load_dataset("moltres23/biothings-query-instruction-pairs", split="train")
+test_set = load_dataset("moltres23/biothings-query-instruction-pairs", split="test")
 
 
 import tqdm
@@ -192,17 +208,17 @@ with torch.no_grad():
 
         # batched_inputs = list(map(few_shot_prompt, batch["instruction"], [icl_examples], [docs], [description]))
         # batched_inputs = list(map(default_prompt, batch["instruction"], [docs], [description]))
-        # batched_inputs = list(map(few_shot_with_rag, batch["instruction"], [icl_examples], [docs], process_retrieved_docs(doc_batches)))
-        batched_inputs = list(map(rag_prompt, batch["instruction"], [docs], process_retrieved_docs(doc_batches)))
+        batched_inputs = list(map(few_shot_with_rag, batch["instruction"], [icl_examples], [docs], process_retrieved_docs(doc_batches)))
+        # batched_inputs = list(map(rag_prompt, batch["instruction"], [docs], process_retrieved_docs(doc_batches)))
         if idx == 0:
             print(f"\nDemo Input: {batched_inputs}\n")
 
         batch_responses = generator(batched_inputs)
-        all_responses.extend(batch_responses.values())
-        # all_responses.append(batch_responses)
+        # all_responses.extend(batch_responses.values())
+        all_responses.append(batch_responses)
 
 
 import pickle
-
-with open('responses_llama3b_rag.pkl', 'wb') as fd:
-   pickle.dump(all_responses, fd)
+print(all_responses)
+# with open('responses_llama3b_ft_rag_icl.pkl', 'wb') as fd:
+#    pickle.dump(all_responses, fd)
