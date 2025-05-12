@@ -52,10 +52,16 @@ model = outlines.models.Transformers(model, tokenizer)
 generator = outlines.generate.text(model)
 
 # load context docs
-with open("../gene_query_docs.txt", "r") as doc_fd:
+# with open("../gene_query_docs.txt", "r") as doc_fd:
+#     docs = doc_fd.read()
+
+# with open("../data/original/compact_desc_with_context.csv") as desc_fd:
+#     description = desc_fd.read()
+
+with open("./pending_api/docs.txt", "r") as doc_fd:
     docs = doc_fd.read()
 
-with open("../data/original/compact_desc_with_context.csv") as desc_fd:
+with open("./pending_api/fields.txt") as desc_fd:
     description = desc_fd.read()
 
 # Function to generate response from LLM
@@ -141,7 +147,7 @@ if __name__ == "__main__":
         user_input = gr.Textbox(label="Enter your query")
         llm_response = gr.Textbox(label="LLM Response", interactive=False)
         url_display = gr.Markdown(label="Link")
-        user_correction = gr.Textbox(label="Uesr-corrected Response (if needed), like `/v3/query...` or `/v3/gene...` etc")
+        user_correction = gr.Textbox(label="User-corrected Response (if needed), like `/v3/query...` or `/v3/gene...` etc")
 
         submit_button = gr.Button("Generate Response")
         save_button = gr.Button("Save Correction")

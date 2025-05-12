@@ -3,6 +3,7 @@
 
 # ## Part 1: Define metrics
 
+import os
 from urllib.parse import urlparse, parse_qs
 
 import outlines.samplers
@@ -118,7 +119,7 @@ def few_shot_with_rag(instruction, examples, docs, relevant_schema):
 <|begin_of_text|><|start_header_id|>system<|end_header_id|>
 Use the documentation and schema to complete the user-given task.
 Docs: {{ docs }}\n Schema: {{ relevant_schema }}\n<|eot_id|><|start_header_id|>user<|end_header_id|>
-{{ instruction }}. Write an API call.
+{{ instruction }}. Write an API call and do not write anything else in your response.
 
 Examples
 --------
@@ -139,11 +140,16 @@ model_path = "models/meta_llama3_1"
 adapter_path = "models/ft/qlora_train_split/adapter"
 # adapter_path = "models/ft/lora_train_split_3b/checkpoint-713"
 # model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16, output_attentions=True).to("cuda")
-model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16)
-model = PeftModel.from_pretrained(model, adapter_path, torch_dtype=torch.bfloat16, output_attentions=True, weights_only=True).to("cuda")
-tokenizer = AutoTokenizer.from_pretrained(model_path)
-model.eval()
+# model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16)
+# model = PeftModel.from_pretrained(model, adapter_path, torch_dtype=torch.bfloat16, output_attentions=True, weights_only=True).to("cuda")
+# tokenizer = AutoTokenizer.from_pretrained(model_path)
+# model.eval()
 
+from pydantic import BaseModel, constr
+from typing import Annotated
+
+class APICall(BaseModel):
+    api_call: str
 
 def evaluate(api_call: str):
     return None
@@ -154,18 +160,15 @@ json_schema = """
   "description": "chatbot response",
   "type": "object",
   "properties": {
-    "api_call": {
-      "type": "string",
-      "description": "Query for MyGene",
-      "maxLength": 256
-    }
+    
   }
 }
 """
 
-model = outlines.models.Transformers(model, tokenizer)
-# sampler = outlines.samplers.greedy()
-generator = outlines.generate.json(model, json_schema)
+# model = outlines.models.Transformers(model, tokenizer)
+model = outlines.models.openai("gpt-4o-mini", api_key=os.environ["OPENAI_KEY"])
+# sampler = outlines.samplers.beam_search(beams=5)
+generator = outlines.generate.text(model)
 # generator = outlines.generate.regex(model, r"/v3/query/.*", sampler)
 # generator = outlines.generate.regex(model, r"/v3/query/.*")
 
@@ -215,10 +218,11 @@ with torch.no_grad():
 
         batch_responses = generator(batched_inputs)
         # all_responses.extend(batch_responses.values())
+        # all_responses.append(tuple(d["api_call"] for d in batch_responses))  # for beam search
         all_responses.append(batch_responses)
 
 
 import pickle
-print(all_responses)
-# with open('responses_llama3b_ft_rag_icl.pkl', 'wb') as fd:
-#    pickle.dump(all_responses, fd)
+
+with open('responses_openai_mini_rag_icl.pkl', 'wb') as fd:
+   pickle.dump(all_responses, fd)
