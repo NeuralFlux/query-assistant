@@ -1,0 +1,4 @@
+Why use Qwen2?
+https://www.reddit.com/r/LocalLLaMA/comments/1dh6tg7/qwen2_areas_of_application_where_it_seems/
+
+Should we filter queries with hits only? How to avoid too many similar queries?

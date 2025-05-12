@@ -1,0 +1,55 @@
+AST eval 1.0
+BERT Score {'precision': [0.9818707704544067], 'recall': [0.9818708300590515], 'f1': [0.9818708300590515], 'hashcode': 'microsoft/codebert-base_L12_no-idf_version=0.3.12(hug_trans=4.43.4)'}
+Start <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+Use the documentation and schema to complete the user-given task.
+Docs: Gene query service
+
+This page describes the reference for MyGene.info gene query web service. It’s also recommended to
+End r the ENSG00000103187 gene in human. Limit the search to Ensembl gene IDs.. Write an API call.
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+Start <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+Use the documentation and schema to complete the user-given task.
+Docs: Gene query service
+
+This page describes the reference for MyGene.info gene query web service. It’s also recommended to
+End r the ENSG00000103187 gene in human. Limit the search to Ensembl gene IDs.. Write an API call.
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.40it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.79it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.72it/s]
+We detected that you are passing `past_key_values` as a tuple and this is deprecated and will be removed in v4.43. Please use an appropriate `Cache` class (https://huggingface.co/docs/transformers/v4.41.3/en/internal/generation_utils#transformers.Cache)
+You are not running the flash-attention implementation, expect numerical differences.
+Traceback (most recent call last):
+  File "/home/atubati/query_assistant/eval_lm.py", line 152, in <module>
+    sample_api_call = generator([prompt])
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/outlines/generate/api.py", line 207, in __call__
+    last_state = next(states)
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/outlines/generate/generator.py", line 74, in sequence_generator
+    logits, kv_cache = model(token_ids, attention_masks, kv_cache)
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/outlines/models/transformers.py", line 188, in __call__
+    logits, kv_cache = self.forward(input_ids, attention_mask, past_key_values)
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/outlines/models/transformers.py", line 171, in forward
+    output = self.model(
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/transformers/models/phi3/modeling_phi3.py", line 1203, in forward
+    outputs = self.model(
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/transformers/models/phi3/modeling_phi3.py", line 998, in forward
+    layer_outputs = decoder_layer(
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/transformers/models/phi3/modeling_phi3.py", line 735, in forward
+    attn_outputs, self_attn_weights, present_key_value = self.self_attn(
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/atubati/query_assistant/venv/lib/python3.10/site-packages/transformers/models/phi3/modeling_phi3.py", line 399, in forward
+    attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 14.00 GiB. GPU 0 has a total capacity of 47.43 GiB of which 11.38 GiB is free. Process 23003 has 2.53 GiB memory in use. Process 562121 has 988.00 MiB memory in use. Process 1756733 has 988.00 MiB memory in use. Process 3348090 has 4.74 GiB memory in use. Process 3957038 has 3.79 GiB memory in use. Including non-PyTorch memory, this process has 23.01 GiB memory in use. Of the allocated memory 22.64 GiB is allocated by PyTorch, and 57.24 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

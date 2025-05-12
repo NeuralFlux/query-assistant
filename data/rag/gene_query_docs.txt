@@ -1,0 +1,248 @@
+Gene query service
+This page describes the reference for MyGene.info gene query web service. It’s also recommended to try it live on our interactive API page.
+
+Service endpoint
+http://mygene.info/v3/query
+
+
+GET request
+Query parameters
+
+
+q
+
+    Required, passing user query. The detailed query syntax for parameter “q” we explained below.
+
+
+fields
+
+    Optional, can be a comma-separated fields to limit the fields returned from the matching gene hits. The supported field names can be found from any gene object (e.g. gene 1017). Note that it supports dot notation as well, e.g., you can pass “refseq.rna”. If “fields=all”, all available fields will be returned. Default: “symbol,name,taxid,entrezgene”.
+
+
+species
+
+    Optional, can be used to limit the gene hits from given species. You can use “common names” for nine common species (human, mouse, rat, fruitfly, nematode, zebrafish, thale-cress, frog and pig). All other species, you can provide their taxonomy ids. See more details here. Multiple species can be passed using comma as a separator. Passing “all” will query against all available species. Default: all.
+
+
+size
+
+    Optional, the maximum number of matching gene hits to return (with a cap of 1000 at the moment). Default: 10.
+
+from
+
+    Optional, the number of matching gene hits to skip, starting from 0. Default: 0
+
+Hint
+
+The combination of “size” and “from” parameters can be used to get paging for large query:
+
+q=cdk*&size=50                     first 50 hits
+q=cdk*&size=50&from=50             the next 50 hits
+
+
+fetch_all
+
+    Optional, a boolean, which when TRUE, allows fast retrieval of all unsorted query hits. The return object contains a _scroll_id field, which when passed as a parameter to the query endpoint, returns the next 1000 query results. Setting fetch_all = TRUE causes the results to be inherently unsorted, therefore the sort parameter is ignored. For more information see examples using fetch_all here. Default: FALSE.
+
+
+scroll_id
+
+    Optional, a string containing the _scroll_id returned from a query request with fetch_all = TRUE. Supplying a valid scroll_id will return the next 1000 unordered results. If the next results are not obtained within 1 minute of the previous set of results, the scroll_id becomes stale, and a new one must be obtained with another query request with fetch_all = TRUE. All other parameters are ignored when the scroll_id parameter is supplied. For more information see examples using scroll_id here.
+
+
+sort
+
+    Optional, the comma-separated fields to sort on. Prefix with “-” for descending order, otherwise in ascending order. Default: sort by matching scores in decending order.
+
+
+facets
+
+    Optional, a single field or comma-separated fields to return facets, for example, “facets=taxid”, “facets=taxid,type_of_gene”. See examples of faceted queries here.
+
+
+facet_size
+
+    Optional, an integer (1 <= facet_size <= 1000) that specifies how many buckets to return in a faceted query.
+
+
+species_facet_filter
+
+    Optional, relevant when faceting on species (i.e., “facets=taxid” are passed). It’s used to pass species filter without changing the scope of faceting, so that the returned facet counts won’t change. Either species name or taxonomy id can be used, just like “species” parameter above. See examples of faceted queries here.
+
+
+entrezonly
+
+    Optional, when passed as “true” or “1”, the query returns only the hits with valid Entrez gene ids. Default: false.
+
+
+ensemblonly
+
+    Optional, when passed as “true” or “1”, the query returns only the hits with valid Ensembl gene ids. Default: false.
+
+
+callback
+
+    Optional, you can pass a “callback” parameter to make a JSONP call.
+
+
+dotfield
+
+    Optional, can be used to control the format of the returned gene object. If “dotfield” is true, the returned data object is returned flattened (no nested objects) using dotfield notation for key names. Default: false.
+
+
+filter
+
+    Alias for “fields” parameter.
+
+
+limit
+
+    Alias for “size” parameter.
+
+
+skip
+
+    Alias for “from” parameter.
+
+
+email
+
+    Optional, if you are regular users of our services, we encourage you to provide us an email, so that we can better track the usage or follow up with you.
+
+
+Query syntax
+
+Examples of query parameter “q”:
+Simple queries
+
+search for everything:
+
+q=cdk2                              search for any fields
+q=tumor suppressor                  default as "AND" for all query terms
+q="cyclin-dependent kinase"         search for the phrase
+
+Fielded queries
+
+q=entrezgene:1017
+q=symbol:cdk2
+q=refseq:NM_001798
+
+
+Available fields
+
+This table lists some commonly used fields can be used for “fielded queries”. Check here for the complete list of available fields.
+Field 	Description 	Examples
+entrezgene 	Entrez gene id 	q=entrezgene:1017
+ensembl.gene 	Ensembl gene id 	q=ensembl.gene:ENSG00000123374
+symbol 	official gene symbol 	q=symbol:cdk2
+name 	gene name 	q=name:cyclin-dependent
+alias 	gene alias 	q=alias:p33
+summary 	gene summary text 	q=summary:insulin
+refseq 	NCBI RefSeq id (both rna and proteins) 	q=refseq:NM_001798; q=refseq:NP_439892
+unigene 	NCBI UniGene id 	q=unigene:Hs.19192
+homologene 	NCBI HomoloGene id 	q=homologene:74409
+accession 	NCBI GeneBank Accession number 	q=accession:AA810989
+ensembl.transcript 	Ensembl transcript id 	q=ensembl.transcript:ENST00000266970
+ensembl.protein 	Ensembl protein id 	q=ensembl.protein:ENSP00000243067
+uniprot 	UniProt id 	q=uniprot:P24941
+ipi (deprecated!) 	IPI id 	q=ipi:IPI00031681
+pdb 	PDB id 	q=pdb:1AQ1
+prosite 	Prosite id 	q=prosite:PS50011
+pfam 	PFam id 	q=pfam:PF00069
+interpro 	InterPro id 	q=interpro:IPR008351
+mim 	OMIM id 	q=mim:116953
+pharmgkb 	PharmGKB id 	q=pharmgkb:PA101
+reporter 	Affymetrix probeset id 	q=reporter:204252_at
+reagent 	GNF reagent id 	q=reagent:GNF282834
+go 	Gene Ontology id 	q=go:0000307
+hgnc 	HUGO Gene Nomenclature Committee 	q=hgnc:1771
+hprd 	Human Protein Reference Database 	q=hprd:00310
+mgi 	Mouse Genome Informatics 	q=mgi:MGI\:88339
+rgd 	Rat Genome Database 	q=rgd:620620
+flybase 	A Database of Drosophila Genes & Genomes 	q=flybase:FBgn0004107&species=fruitfly
+wormbase 	C elegans and related nematodes database 	q=wormbase:WBGene00057218&species=31234
+zfin 	Zebrafish Information Network 	q=zfin:ZDB-GENE-980526-104&species=zebrafish
+tair 	Arabidopsis Information Resource 	q=tair:AT3G48750&species=thale-cress
+xenbase 	Xenopus laevis and Xenopus tropicalis; biology and genomics resource; q=xenbase:XB-GENE-1001990&species=frog
+mirbase 	database of published miRNA; sequences and annotation;	q=mirbase:MI0017267
+retired 	Retired Entrez gene id, including those with replaced gene ids.	q=retired:84999
+
+
+Genome interval query
+When we detect your query (”q” parameter) contains a genome interval pattern like this one:
+
+chrX:151,073,054-151,383,976
+
+we will do the genome interval query for you. Besides above interval string, you also need to specify “species” parameter (with the default as human). These are all acceptted queries:
+
+q=chrX:151073054-151383976&species:9606
+q=chrX:151,073,054-151,383,976&species:human
+
+Hint
+
+As you can see above, the genomic locations can include commas in it.
+
+
+See also
+
+Genome assembly information
+Wildcard queries
+
+Wildcard character “*” or “?” is supported in either simple queries or fielded queries:
+
+q=CDK?                              single character wildcard
+q=symbol:CDK?                       single character wildcard within "symbol" field
+q=IL*R                              multiple character wildcard
+
+Note
+
+Wildcard character can not be the first character. It will be ignored.
+Boolean operators and grouping
+
+You can use AND/OR/NOT boolean operators and grouping to form complicated queries:
+
+q=tumor AND suppressor                        AND operator
+q=CDK2 OR BTK                                 OR operator
+q="tumor suppressor" NOT receptor             NOT operator
+q=(interleukin OR insulin) AND receptor       the use of parentheses
+
+
+Returned object Example
+
+A GET request like this:
+
+http://mygene.info/v3/query?q=symbol:cdk2
+
+should return hits as:
+
+{
+  "hits": [
+    {
+      "name": "cyclin-dependent kinase 2",
+      "_score": 87.76775,
+      "symbol": "CDK2",
+      "taxid": 9606,
+      "entrezgene": 1017,
+      "_id": "1017"
+    },
+    {
+      "name": "cyclin-dependent kinase 2",
+      "_score": 79.480484,
+      "symbol": "Cdk2",
+      "taxid": 10090,
+      "entrezgene": 12566,
+      "_id": "12566"
+    },
+    {
+      "name": "cyclin dependent kinase 2",
+      "_score": 62.286797,
+      "symbol": "Cdk2",
+      "taxid": 10116,
+      "entrezgene": 362817,
+      "_id": "362817"
+    }
+  ],
+  "total": 3,
+  "max_score": 87.76775,
+  "took": 4
+}

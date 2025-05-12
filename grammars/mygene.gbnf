@@ -1,0 +1,26 @@
+root   ::= q ("&" fields)? ("&" species)?
+
+term  ::= [a-zA-Z0-9_-]+
+
+# q
+q  ::= simple-query | fielded-query | boolean-query | wildcard-query | genome-interval-query
+
+simple-query  ::= "q=" term
+fielded-query ::= "q=" field ":" term (","field ":" term)*
+boolean-query ::= "q=" term ( " AND " boolean-subquery | " OR " boolean-subquery | " NOT " boolean-subquery)*
+wildcard-query ::= "q=" term-with-wildcard
+genome-interval-query ::= "q=" genome-interval
+
+boolean-subquery ::= "(" boolean-query ")" | boolean-query
+term-with-wildcard ::= [a-zA-Z0-9_-]* ("*" | "?") [a-zA-Z0-9_-]*
+genome-interval ::= "chr" term ":" start-position "-" end-position
+start-position ::= [0-9]+
+end-position ::= [0-9]+
+
+# fields
+fields ::= "fields=" field ("," field)*
+field ::= "all" | "entrezgene" | "ensembl.gene" | "symbol" | "name" | "alias" | "summary" | "refseq" | "unigene" | "homologene" | "accession" | "ensembl.transcript" | "ensembl.protein" | "uniprot" | "pdb" | "prosite" | "pfam" | "interpro" | "mim" | "pharmgkb" | "reporter" | "reagent" | "go" | "hgnc" | "hprd" | "mgi" | "rgd" | "flybase" | "wormbase" | "zfin" | "tair" | "xenbase" | "mirbase" | "retired"
+
+# species
+species ::= "species=" species-choice ("," species-choice)*
+species-choice ::= "human" | "mouse" | "rat" | "fruitfly" | "nematode" | "zebrafish" | "thale-cress" | "frog" | "pig" | [0-9]+

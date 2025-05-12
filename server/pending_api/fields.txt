@@ -1,0 +1,165 @@
+Available fields
+
+{
+   "category":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.annotation_quality":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.cas_number":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.description":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.kingdom":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.klass":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.moldb_inchi":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.moldb_inchikey":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.moldb_iupac":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.moldb_mono_mass":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.moldb_smiles":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.name":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.orig_contents.avg":{
+      "type":"float",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.orig_contents.max":{
+      "type":"float",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.orig_contents.min":{
+      "type":"float",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.orig_contents.unit":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.reference":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.state":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.subklass":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "compounds.superklass":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "created_at":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "creator_id":{
+      "type":"integer",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "description":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "export_to_afcdb":{
+      "type":"boolean",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "export_to_foodb":{
+      "type":"boolean",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "food_group":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "food_subgroup":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "food_type":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "itis_id":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "legacy_id":{
+      "type":"integer",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "name":{
+      "searched_by_default":true,
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "name_scientific":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "ncbi_taxonomy_id":{
+      "type":"integer",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "picture_content_type":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "picture_file_name":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "picture_file_size":{
+      "type":"integer",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "picture_updated_at":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "updated_at":{
+      "type":"keyword",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "updater_id":{
+      "type":"integer",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   },
+   "wikipedia_id":{
+      "type":"text",
+      "description":"A general description of the database entry, including its biological or ecological significance."
+   }
+}

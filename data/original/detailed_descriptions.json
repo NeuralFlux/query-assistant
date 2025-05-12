@@ -1,0 +1,1142 @@
+{
+    "AllianceGenome": {
+        "description": "A consortium focused on providing unified access to genetic and genomic data from different model organism databases.",
+        "type": "keyword"
+    },
+    "AnimalQTLdb": {
+        "description": "A database that curates quantitative trait locus (QTL) data for various animal species, facilitating the study of genetics related to traits in livestock and other animals.",
+        "type": "text"
+    },
+    "FLYBASE": {
+        "description": "A comprehensive database for information on the genetics and molecular biology of the fruit fly Drosophila melanogaster.",
+        "type": "keyword"
+    },
+    "HGNC": {
+        "description": "The HUGO Gene Nomenclature Committee (HGNC) database that provides unique and meaningful names for human genes.",
+        "type": "keyword"
+    },
+    "HPRD": {
+        "description": "The Human Protein Reference Database, a curated database of human proteins.",
+        "type": "keyword"
+    },
+    "MGI": {
+        "description": "The Mouse Genome Informatics database, a comprehensive resource for genetic, genomic, and biological data on the laboratory mouse.",
+        "type": "keyword"
+    },
+    "MIM": {
+        "description": "Mendelian Inheritance in Man (MIM), a comprehensive database cataloging human genes and genetic disorders.",
+        "type": "keyword"
+    },
+    "RATMAP": {
+        "description": "A database for genetic mapping in rats, focusing on building a high-resolution genetic and physical map of the rat genome.",
+        "type": "keyword"
+    },
+    "RGD": {
+        "description": "The Rat Genome Database, a repository of genetic and genomic data for the laboratory rat.",
+        "type": "keyword"
+    },
+    "SGD": {
+        "description": "The Saccharomyces Genome Database, a scientific database for the yeast Saccharomyces cerevisiae.",
+        "type": "keyword"
+    },
+    "TAIR": {
+        "description": "The Arabidopsis Information Resource, a database for genetic and molecular biology data for the model plant Arabidopsis thaliana.",
+        "type": "keyword"
+    },
+    "Vega": {
+        "description": "The Vertebrate Genome Annotation database, hosting high-quality manual annotation of vertebrate genomes.",
+        "type": "text"
+    },
+    "WormBase": {
+        "description": "A comprehensive resource for information on the biology and genomics of the nematode Caenorhabditis elegans and related species.",
+        "type": "keyword"
+    },
+    "Xenbase": {
+        "description": "A database for research on Xenopus laevis and Xenopus tropicalis, important model organisms in vertebrate developmental biology.",
+        "type": "keyword"
+    },
+    "ZFIN": {
+        "description": "The Zebrafish Information Network, a genetic and genomic data resource for the zebrafish (Danio rerio) research community.",
+        "type": "keyword"
+    },
+    "accession.genomic": {
+        "description": "Accession numbers associated with genomic sequences, providing unique identifiers for these sequences.",
+        "type": "text"
+    },
+    "accession.protein": {
+        "description": "Accession numbers related to protein sequences, used to identify and access specific protein sequence entries.",
+        "type": "text"
+    },
+    "accession.rna": {
+        "description": "Accession numbers assigned to RNA sequences, enabling the identification and retrieval of specific RNA sequence data.",
+        "type": "text"
+    },
+    "alias": {
+        "description": "Alternate names or identifiers for genes, proteins, or other biological entities that may differ from the primary name.",
+        "type": "keyword"
+    },
+    "biocarta": {
+        "description": "A resource for biological pathway data, providing information on molecular interactions and biological processes.",
+        "type": "text"
+    },
+    "clingen.clinical_validity.classification": {
+        "description": "Classification of clinical validity based on evidence and criteria evaluated.",
+        "type": "keyword"
+    },
+    "clingen.clinical_validity.classification_date": {
+        "description": "The date on which the clinical validity classification was made.",
+        "type": "date"
+    },
+    "clingen.clinical_validity.disease_label": {
+        "description": "Text label for the disease associated with the clinical validity evaluation.",
+        "type": "text"
+    },
+    "clingen.clinical_validity.gcep": {
+        "description": "Gene Clinical Expert Panel responsible for the evaluation.",
+        "type": "text"
+    },
+    "clingen.clinical_validity.moi": {
+        "description": "Mode of inheritance associated with the clinical validity classification.",
+        "type": "keyword"
+    },
+    "clingen.clinical_validity.mondo": {
+        "description": "MONDO term representing the disease linked with the clinical validity.",
+        "type": "keyword"
+    },
+    "clingen.clinical_validity.online_report": {
+        "description": "Link or reference to the online report of the clinical validity evaluation.",
+        "type": "text"
+    },
+    "clingen.clinical_validity.sop": {
+        "description": "Standard operating procedure followed for the clinical validity evaluation.",
+        "type": "keyword"
+    },
+    "ec": {
+        "description": "Enzyme Commission number representing the enzyme classification.",
+        "type": "keyword"
+    },
+    "ensembl.gene": {
+        "description": "Ensembl identifier for the gene.",
+        "type": "keyword"
+    },
+    "ensembl.protein": {
+        "description": "Ensembl protein identifier",
+        "type": "keyword"
+    },
+    "ensembl.transcript": {
+        "description": "Ensembl transcript identifier",
+        "type": "keyword"
+    },
+    "ensembl.type_of_gene": {
+        "description": "Type of gene according to Ensembl classification",
+        "type": "keyword"
+    },
+    "entrezgene": {
+        "description": "Entrez Gene identifier",
+        "type": "keyword"
+    },
+    "exac.bp": {
+        "description": "Exon-Aggregate Coverage database (ExAC) base pairs count",
+        "type": "integer"
+    },
+    "exac.cds_end": {
+        "description": "ExAC coding DNA sequence (CDS) end position",
+        "type": "integer"
+    },
+    "exac.cds_start": {
+        "description": "ExAC coding DNA sequence (CDS) start position",
+        "type": "integer"
+    },
+    "exac.n_exons": {
+        "description": "Number of exons as per ExAC",
+        "type": "integer"
+    },
+    "exac.transcript": {
+        "description": "Transcript identifier according to ExAC",
+        "type": "text"
+    },
+    "generif.pubmed": {
+        "description": "PubMed identifier associated with GeneRIF (Gene Reference Into Function)",
+        "type": "long"
+    },
+    "generif.text": {
+        "type": "text",
+        "description": "A brief functional description or annotation related to a particular gene. It provides insights into the gene's role or relevance in biological processes."
+    },
+    "genomic_pos.chr": {
+        "type": "keyword",
+        "description": "The chromosome where the gene is located, using a keyword type to ensure exact matches. Used to identify the chromosomal location in the reference genome."
+    },
+    "genomic_pos.end": {
+        "type": "long",
+        "description": "The ending base position of the gene on the chromosome, indicating where the gene sequence ends in the genomic coordinate system."
+    },
+    "genomic_pos.start": {
+        "type": "long",
+        "description": "The starting base position of the gene on the chromosome, indicating where the gene sequence begins in the genomic coordinate system."
+    },
+    "genomic_pos.strand": {
+        "type": "byte",
+        "description": "The strand on which the gene is located, represented by a byte type to signify positive (usually '+') or negative (usually '-') strand orientation."
+    },
+    "genomic_pos_hg19.chr": {
+        "type": "keyword",
+        "description": "The chromosome where the gene is located in the human reference genome version hg19. This uses a keyword type for exact matching."
+    },
+    "genomic_pos_hg19.end": {
+        "type": "long",
+        "description": "The ending base position of the gene in the hg19 human genome assembly, indicating where the gene sequence ends in this specific assembly."
+    },
+    "genomic_pos_hg19.start": {
+        "type": "long",
+        "description": "The starting base position of the gene in the hg19 human genome assembly, indicating where the gene sequence begins in this specific assembly."
+    },
+    "genomic_pos_hg19.strand": {
+        "type": "byte",
+        "description": "The strand on which the gene is located in the hg19 human genome assembly, represented by a byte type to signify positive (usually '+') or negative (usually '-') strand orientation."
+    },
+    "genomic_pos_mm9.chr": {
+        "type": "keyword",
+        "description": "The chromosome where the gene is located in the mouse reference genome version mm9. This uses a keyword type for exact matching."
+    },
+    "genomic_pos_mm9.end": {
+        "description": "The ending position of a gene or sequence feature in the mm9 mouse genome assembly.",
+        "data_type": "long"
+    },
+    "genomic_pos_mm9.start": {
+        "description": "The starting position of a gene or sequence feature in the mm9 mouse genome assembly.",
+        "data_type": "long"
+    },
+    "genomic_pos_mm9.strand": {
+        "description": "Indicates the DNA strand (forward '+' or reverse '-') on which a gene or sequence feature is located in the mm9 mouse genome assembly.",
+        "data_type": "byte"
+    },
+    "go.BP.category": {
+        "description": "The category or general area of the biological process according to the Gene Ontology (GO).",
+        "data_type": "text"
+    },
+    "go.BP.evidence": {
+        "description": "The type of evidence that supports the association of a gene with a biological process in the Gene Ontology (GO).",
+        "data_type": "text"
+    },
+    "go.BP.id": {
+        "description": "The unique identifier for a specific biological process in the Gene Ontology (GO).",
+        "data_type": "keyword"
+    },
+    "go.BP.pubmed": {
+        "description": "The PubMed identifier (PMID) associated with a publication that provides evidence for a gene's role in a biological process.",
+        "data_type": "long"
+    },
+    "go.BP.term": {
+        "description": "The specific biological process term associated with a gene in the Gene Ontology (GO).",
+        "data_type": "text"
+    },
+    "go.CC.category": {
+        "description": "The category or general area of the cellular component according to the Gene Ontology (GO).",
+        "data_type": "text"
+    },
+    "go.CC.evidence": {
+        "description": "The type of evidence that supports the association of a gene with a cellular component in the Gene Ontology (GO).",
+        "data_type": "text"
+    },
+    "go.CC.id": {
+        "description": "Unique identifier for cellular components in the Gene Ontology (GO) database.",
+        "data type": "keyword",
+        "examples": [
+            "GO:0005737",
+            "GO:0005575"
+        ]
+    },
+    "go.CC.pubmed": {
+        "description": "PubMed identifier for scientific publications associated with the cellular component.",
+        "data type": "long",
+        "examples": [
+            12345678,
+            23456789
+        ]
+    },
+    "go.CC.term": {
+        "description": "Description or name of the cellular component in the Gene Ontology.",
+        "data type": "text",
+        "examples": [
+            "cytoplasm",
+            "nucleus"
+        ]
+    },
+    "go.MF.category": {
+        "description": "Category or classification of the molecular function in the Gene Ontology.",
+        "data type": "text",
+        "examples": [
+            "binding",
+            "catalytic activity"
+        ]
+    },
+    "go.MF.evidence": {
+        "description": "Type of evidence supporting the association of the molecular function, such as experimental or computational.",
+        "data type": "text",
+        "examples": [
+            "IDA",
+            "IEA"
+        ]
+    },
+    "go.MF.id": {
+        "description": "Unique identifier for molecular functions in the Gene Ontology (GO) database.",
+        "data type": "keyword",
+        "examples": [
+            "GO:0008233",
+            "GO:0016491"
+        ]
+    },
+    "go.MF.pubmed": {
+        "description": "PubMed identifier for scientific publications associated with the molecular function.",
+        "data type": "long",
+        "examples": [
+            34567890,
+            45678901
+        ]
+    },
+    "go.MF.term": {
+        "description": "Description or name of the molecular function in the Gene Ontology.",
+        "data type": "text",
+        "examples": [
+            "protease activity",
+            "oxidoreductase activity"
+        ]
+    },
+    "homologene.genes": {
+        "description": "Identifiers for genes that are part of a homologous gene cluster in the HomoloGene database.",
+        "data type": "long",
+        "examples": [
+            9606,
+            10090
+        ]
+    },
+    "homologene.id": {
+        "description": "Unique identifier for a homologous gene cluster in the HomoloGene database.",
+        "data type": "long",
+        "examples": [
+            1234,
+            5678
+        ]
+    },
+    "humancyc": {
+        "type": "text",
+        "description": "Data related to the HumanCyc database, which contains information on metabolic pathways and enzymes in humans."
+    },
+    "interpro.desc": {
+        "type": "text",
+        "description": "A textual description of an InterPro entry, representing a protein sequence family, domain, or functional site annotations."
+    },
+    "interpro.id": {
+        "type": "keyword",
+        "description": "A unique identifier assigned to an InterPro entry for referencing protein sequence data."
+    },
+    "interpro.short_desc": {
+        "type": "text",
+        "description": "A brief summary or short description of an InterPro entry."
+    },
+    "ipi": {
+        "type": "keyword",
+        "description": "An identifier from the International Protein Index (IPI), used for referencing protein sequences."
+    },
+    "kegg": {
+        "type": "text",
+        "description": "Information pertaining to the KEGG (Kyoto Encyclopedia of Genes and Genomes) database, which integrates genomic, chemical, and systemic functional information."
+    },
+    "locus_tag": {
+        "type": "keyword",
+        "description": "A tag or identifier assigned to a specific location within a genome."
+    },
+    "map_location": {
+        "type": "text",
+        "description": "Textual information about the chromosomal or physical location of a gene or genetic marker."
+    },
+    "miRBase": {
+        "type": "keyword",
+        "description": "An identifier from miRBase, a database that houses information on microRNA sequences and annotations."
+    },
+    "mousecyc": {
+        "type": "text",
+        "description": "Data from the MouseCyc database, which is a repository of metabolic pathways and enzyme information specific to mice."
+    },
+    "name": {
+        "type": "text",
+        "description": "The official name of the gene or protein."
+    },
+    "netpath": {
+        "type": "text",
+        "description": "The pathway information related to the gene or protein, often used for identifying the biological pathways it is involved in."
+    },
+    "other_names": {
+        "type": "text",
+        "description": "Alternative names or aliases for the gene or protein."
+    },
+    "pantherdb.Araport": {
+        "type": "keyword",
+        "description": "The PANTHER database identifier for Arabidopsis thaliana genes or proteins."
+    },
+    "pantherdb.EcoGene": {
+        "type": "keyword",
+        "description": "The PANTHER database identifier for Escherichia coli genes or proteins."
+    },
+    "pantherdb.Ensembl": {
+        "type": "keyword",
+        "description": "The PANTHER database identifier for genes or proteins as per the Ensembl database."
+    },
+    "pantherdb.EnsemblGenome": {
+        "type": "keyword",
+        "description": "The PANTHER database identifier for genes or proteins as per the Ensembl Genomes database, which includes non-vertebrate species."
+    },
+    "pantherdb.FlyBase": {
+        "type": "keyword",
+        "description": "The PANTHER database identifier for Drosophila melanogaster genes or proteins as per FlyBase."
+    },
+    "pantherdb.Gene": {
+        "type": "keyword",
+        "description": "General gene identifier within the PANTHER database."
+    },
+    "pantherdb.GeneID": {
+        "type": "keyword",
+        "description": "The specific gene identifier in the PANTHER database."
+    },
+    "pantherdb.Gene_Name": {
+        "description": "The standard or commonly used name for the gene in Panther Database.",
+        "type": "keyword"
+    },
+    "pantherdb.Gene_ORFName": {
+        "description": "The Open Reading Frame (ORF) name associated with the gene in Panther Database.",
+        "type": "keyword"
+    },
+    "pantherdb.Gene_OrderedLocusName": {
+        "description": "The ordered locus name representing the gene's position on the chromosome in Panther Database.",
+        "type": "keyword"
+    },
+    "pantherdb.HGNC": {
+        "description": "HUGO Gene Nomenclature Committee (HGNC) identifier for the gene in the Panther Database.",
+        "type": "keyword"
+    },
+    "pantherdb.MGI": {
+        "description": "Mouse Genome Informatics (MGI) identifier for the gene in the Panther Database.",
+        "type": "keyword"
+    },
+    "pantherdb.PomBase": {
+        "description": "PomBase identifier for the gene, specific to the fission yeast Schizosaccharomyces pombe, in Panther Database.",
+        "type": "keyword"
+    },
+    "pantherdb.RGD": {
+        "description": "Rat Genome Database (RGD) identifier for the gene in the Panther Database.",
+        "type": "keyword"
+    },
+    "pantherdb.SGD": {
+        "description": "Saccharomyces Genome Database (SGD) identifier for the gene in Panther Database.",
+        "type": "keyword"
+    },
+    "pantherdb.TAIR": {
+        "description": "The Arabidopsis Information Resource (TAIR) identifier for the gene in Panther Database.",
+        "type": "keyword"
+    },
+    "pantherdb.WormBase": {
+        "description": "WormBase identifier for the gene, specific to the model organism Caenorhabditis elegans, in Panther Database.",
+        "type": "keyword"
+    },
+    "pantherdb.ZFIN": {
+        "type": "keyword",
+        "description": "ZFIN (Zebrafish Model Organism Database) identifier used for zebrafish gene information."
+    },
+    "pantherdb.dictyBase": {
+        "type": "keyword",
+        "description": "dictyBase identifier used for Dictyostelium discoideum gene information."
+    },
+    "pantherdb.ortholog.Araport": {
+        "type": "keyword",
+        "description": "Araport identifier used for Arabidopsis thaliana orthologous gene information."
+    },
+    "pantherdb.ortholog.EcoGene": {
+        "type": "keyword",
+        "description": "EcoGene identifier used for Escherichia coli orthologous gene information."
+    },
+    "pantherdb.ortholog.Ensembl": {
+        "type": "keyword",
+        "description": "Ensembl identifier used for orthologous gene information in multiple species."
+    },
+    "pantherdb.ortholog.EnsemblGenome": {
+        "type": "keyword",
+        "description": "EnsemblGenome identifier used for orthologous gene information in non-vertebrate species."
+    },
+    "pantherdb.ortholog.FlyBase": {
+        "type": "keyword",
+        "description": "FlyBase identifier used for Drosophila melanogaster orthologous gene information."
+    },
+    "pantherdb.ortholog.Gene": {
+        "type": "keyword",
+        "description": "General gene identifier used in various databases for orthologous gene information."
+    },
+    "pantherdb.ortholog.GeneCards": {
+        "type": "keyword",
+        "description": "GeneCards identifier used for orthologous gene information in the GeneCards database."
+    },
+    "pantherdb.ortholog.GeneID": {
+        "type": "keyword",
+        "description": "GeneID from NCBI used for orthologous gene information."
+    },
+    "pantherdb.ortholog.Gene_Name": {
+        "type": "keyword",
+        "description": "Canonical name of the gene, which is a unique identifier for the gene across different organisms."
+    },
+    "pantherdb.ortholog.Gene_ORFName": {
+        "type": "keyword",
+        "description": "Open Reading Frame (ORF) name associated with the gene, indicating the sequence of DNA that has the potential to encode protein."
+    },
+    "pantherdb.ortholog.Gene_OrderedLocusName": {
+        "type": "keyword",
+        "description": "Ordered Locus Name, which is systematically assigned and often used in genomic annotation to reflect the gene's position on the chromosome."
+    },
+    "pantherdb.ortholog.HGNC": {
+        "type": "keyword",
+        "description": "HUGO Gene Nomenclature Committee (HGNC) identifier, which ensures each human gene has a unique and universally accepted name and symbol."
+    },
+    "pantherdb.ortholog.MGI": {
+        "type": "keyword",
+        "description": "Mouse Genome Informatics (MGI) identifier, which is used for detailed information on mouse genes and gene products."
+    },
+    "pantherdb.ortholog.PomBase": {
+        "type": "keyword",
+        "description": "PomBase identifier, which provides comprehensive data on the fission yeast (Schizosaccharomyces pombe) genome."
+    },
+    "pantherdb.ortholog.RGD": {
+        "type": "keyword",
+        "description": "Rat Genome Database (RGD) identifier, which is a repository for genetic, genomic, functional, and phenotypic data for the rat."
+    },
+    "pantherdb.ortholog.SGD": {
+        "type": "keyword",
+        "description": "Saccharomyces Genome Database (SGD) identifier, which provides detailed information on the biology of the budding yeast (Saccharomyces cerevisiae)."
+    },
+    "pantherdb.ortholog.TAIR": {
+        "type": "keyword",
+        "description": "The Arabidopsis Information Resource (TAIR) identifier, which provides genetic and molecular biology data for the model plant Arabidopsis thaliana."
+    },
+    "pantherdb.ortholog.WormBase": {
+        "type": "keyword",
+        "description": "WormBase identifier, which is a comprehensive resource for data on the genetics and genomics of the nematode Caenorhabditis elegans and related species."
+    },
+    "pantherdb.ortholog.ZFIN": {
+        "type": "keyword",
+        "description": "Unique identifier for orthologs from the Zebrafish Information Network (ZFIN)."
+    },
+    "pantherdb.ortholog.dictyBase": {
+        "type": "keyword",
+        "description": "Unique identifier for orthologs from dictyBase, the model organism database for Dictyostelium discoideum."
+    },
+    "pantherdb.ortholog.ortholog_type": {
+        "type": "keyword",
+        "description": "Type of ortholog relationship, describing the evolutionary relationship between genes in different species."
+    },
+    "pantherdb.ortholog.panther_family": {
+        "type": "keyword",
+        "description": "Identifier for the PANTHER protein family to which the ortholog belongs, indicating functional relatedness."
+    },
+    "pantherdb.ortholog.taxid": {
+        "type": "integer",
+        "description": "NCBI Taxonomy identifier for the species of the ortholog."
+    },
+    "pantherdb.ortholog.uniprot_kb": {
+        "type": "keyword",
+        "description": "UniProtKB accession number for the ortholog, providing a link to detailed protein information."
+    },
+    "pantherdb.uniprot_kb": {
+        "type": "keyword",
+        "description": "UniProtKB accession number associated with the PANTHER database entry, facilitating protein data retrieval."
+    },
+    "pathway.biocarta.id": {
+        "type": "text",
+        "description": "Identifier for a pathway from BioCarta, a database of molecular pathways."
+    },
+    "pathway.biocarta.name": {
+        "type": "text",
+        "description": "Name of a pathway from BioCarta, describing the biological process or signaling pathway."
+    },
+    "pathway.humancyc.id": {
+        "type": "text",
+        "description": "Identifier for a pathway from HumanCyc, a curated database of human metabolic pathways."
+    },
+    "pathway.humancyc.name": {
+        "type": "text",
+        "description": "Name of the pathway in the HumanCyc database, which contains curated biochemical pathways in human biology."
+    },
+    "pathway.kegg.id": {
+        "type": "text",
+        "description": "Identifier for the pathway in the KEGG (Kyoto Encyclopedia of Genes and Genomes) database, which provides information on molecular interaction and reaction networks."
+    },
+    "pathway.kegg.name": {
+        "type": "text",
+        "description": "Name of the pathway in the KEGG database."
+    },
+    "pathway.mousecyc.id": {
+        "type": "text",
+        "description": "Identifier for the pathway in the MouseCyc database, a collection of curated metabolic pathways for the laboratory mouse."
+    },
+    "pathway.mousecyc.name": {
+        "type": "text",
+        "description": "Name of the pathway in the MouseCyc database."
+    },
+    "pathway.netpath.id": {
+        "type": "text",
+        "description": "Identifier for the pathway in the NetPath database, which focuses on signal transduction pathways in humans."
+    },
+    "pathway.netpath.name": {
+        "type": "text",
+        "description": "Name of the pathway in the NetPath database."
+    },
+    "pathway.pharmgkb.id": {
+        "type": "text",
+        "description": "Identifier for the pathway in the PharmGKB database, which collects information about the impact of human genetic variation on drug responses."
+    },
+    "pathway.pharmgkb.name": {
+        "type": "text",
+        "description": "Name of the pathway in the PharmGKB database."
+    },
+    "pathway.pid.id": {
+        "type": "text",
+        "description": "Identifier for the pathway in the NCI Pathway Interaction Database (PID), a resource for analyzing gene and protein interactions."
+    },
+    "pathway.pid.name": {
+        "description": "Identifier for the pathway in PID (Pathway Interaction Database).",
+        "dataType": "text"
+    },
+    "pathway.reactome.id": {
+        "description": "Unique identifier for the pathway in Reactome.",
+        "dataType": "text"
+    },
+    "pathway.reactome.name": {
+        "description": "Name of the pathway in Reactome.",
+        "dataType": "text"
+    },
+    "pathway.smpdb.id": {
+        "description": "Identifier for the pathway in SMPDB (Small Molecule Pathway Database).",
+        "dataType": "text"
+    },
+    "pathway.smpdb.name": {
+        "description": "Name of the pathway in SMPDB (Small Molecule Pathway Database).",
+        "dataType": "text"
+    },
+    "pathway.wikipathways.id": {
+        "description": "Identifier for the pathway in WikiPathways.",
+        "dataType": "text"
+    },
+    "pathway.wikipathways.name": {
+        "description": "Name of the pathway in WikiPathways.",
+        "dataType": "text"
+    },
+    "pathway.yeastcyc.id": {
+        "description": "Identifier for the pathway in YeastCyc.",
+        "dataType": "text"
+    },
+    "pathway.yeastcyc.name": {
+        "description": "Name of the pathway in YeastCyc.",
+        "dataType": "text"
+    },
+    "pdb": {
+        "description": "Protein Data Bank identifier which is a unique code for each protein structure entry.",
+        "dataType": "keyword"
+    },
+    "pfam": {
+        "description": "Protein family identifier from the Pfam database, which contains information about protein domains and families.",
+        "type": "keyword"
+    },
+    "pharmgkb": {
+        "description": "Identifier from the PharmGKB database, which provides information about how genetic variation affects drug responses.",
+        "type": "keyword"
+    },
+    "pharos.target_id": {
+        "description": "Identifier for a target in the Pharos database, which is a resource for exploring protein targets and small molecules.",
+        "type": "integer"
+    },
+    "pharos.tdl": {
+        "description": "Target Development Level (TDL) from the Pharos database, which categorizes targets based on available evidence and knowledge.",
+        "type": "keyword"
+    },
+    "pid": {
+        "description": "A general-purpose identifier that can be used to reference a specific entity, such as a protein, gene, or sequence.",
+        "type": "text"
+    },
+    "pir": {
+        "description": "Identifier from the Protein Information Resource, which provides comprehensive resources for protein sequences and annotation data.",
+        "type": "keyword"
+    },
+    "prosite": {
+        "description": "Identifier from the PROSITE database, which includes information on protein domains, families, and functional sites.",
+        "type": "keyword"
+    },
+    "reactome": {
+        "description": "Identifier from the Reactome database, a curated pathway database providing insight into biological pathways and processes.",
+        "type": "text"
+    },
+    "reagent.CM-LibrX-no-seq.id": {
+        "description": "Identifier for a reagent in a specific library without sequence information; used for tracking biological reagents.",
+        "type": "keyword"
+    },
+    "reagent.CM-LibrX-no-seq.relationship": {
+        "description": "Describes the relationship of a reagent within a specific context or database, without sequence information.",
+        "type": "text"
+    },
+    "reagent.CondMedia_CM_LibrAB.id": {
+        "type": "keyword",
+        "description": "Unique identifier for the conditioned media library AB reagent."
+    },
+    "reagent.CondMedia_CM_LibrAB.relationship": {
+        "type": "text",
+        "description": "Description of the relationship or association for the conditioned media library AB reagent."
+    },
+    "reagent.GNF_Qia_hs-genome_v1_siRNA.id": {
+        "type": "keyword",
+        "description": "Unique identifier for the GNF Qia human genome v1 siRNA reagent."
+    },
+    "reagent.GNF_Qia_hs-genome_v1_siRNA.relationship": {
+        "type": "text",
+        "description": "Description of the relationship or association for the GNF Qia human genome v1 siRNA reagent."
+    },
+    "reagent.GNF_hs-GPCR_IDT-siRNA.id": {
+        "type": "keyword",
+        "description": "Unique identifier for the GNF human GPCR IDT siRNA reagent."
+    },
+    "reagent.GNF_hs-GPCR_IDT-siRNA.relationship": {
+        "type": "text",
+        "description": "Description of the relationship or association for the GNF human GPCR IDT siRNA reagent."
+    },
+    "reagent.GNF_hs-ORFeome1_1_reads.id": {
+        "type": "keyword",
+        "description": "Unique identifier for the GNF human ORFeome 1.1 reads reagent."
+    },
+    "reagent.GNF_hs-ORFeome1_1_reads.relationship": {
+        "type": "text",
+        "description": "Description of the relationship or association for the GNF human ORFeome 1.1 reads reagent."
+    },
+    "reagent.GNF_hs-Origene.id": {
+        "type": "keyword",
+        "description": "Unique identifier for the GNF human Origene reagent."
+    },
+    "reagent.GNF_hs-Origene.relationship": {
+        "type": "text",
+        "description": "Description of the relationship or association for the GNF human Origene reagent."
+    },
+    "reagent.GNF_hs-druggable_lenti-shRNA.id": {
+        "type": "keyword",
+        "description": "Identifier for lentiviral shRNA targeting the human druggable genome from GNF library."
+    },
+    "reagent.GNF_hs-druggable_lenti-shRNA.relationship": {
+        "type": "text",
+        "description": "Text describing the relationship or association of the lentiviral shRNA with other entities or experiments."
+    },
+    "reagent.GNF_hs-druggable_plasmid-shRNA.id": {
+        "type": "keyword",
+        "description": "Identifier for plasmid shRNA targeting the human druggable genome from GNF library."
+    },
+    "reagent.GNF_hs-druggable_plasmid-shRNA.relationship": {
+        "type": "text",
+        "description": "Text describing the relationship or association of the plasmid shRNA with other entities or experiments."
+    },
+    "reagent.GNF_hs-druggable_siRNA.id": {
+        "type": "keyword",
+        "description": "Identifier for siRNA targeting the human druggable genome from GNF library."
+    },
+    "reagent.GNF_hs-druggable_siRNA.relationship": {
+        "type": "text",
+        "description": "Text describing the relationship or association of the siRNA with other entities or experiments."
+    },
+    "reagent.GNF_hs-oncomine_IDT-siRNA.id": {
+        "type": "keyword",
+        "description": "Identifier for siRNA targeting human genes from the Oncomine collection using IDT technology from GNF library."
+    },
+    "reagent.GNF_hs-oncomine_IDT-siRNA.relationship": {
+        "type": "text",
+        "description": "Text describing the relationship or association of the Oncomine-specific siRNA with other entities or experiments."
+    },
+    "reagent.GNF_hs-pkinase_IDT-siRNA.id": {
+        "type": "keyword",
+        "description": "Identifier for siRNA targeting human protein kinases using IDT technology from GNF library."
+    },
+    "reagent.GNF_hs-pkinase_IDT-siRNA.relationship": {
+        "type": "text",
+        "description": "Text describing the relationship or association of the protein kinase-specific siRNA with other entities or experiments."
+    },
+    "reagent.GNF_hs_LentiORF-HA-MYC.id": {
+        "type": "keyword"
+    },
+    "reagent.GNF_hs_LentiORF-HA-MYC.relationship": {
+        "type": "text"
+    },
+    "reagent.GNF_hs_LentiORF-Jred.id": {
+        "type": "keyword"
+    },
+    "reagent.GNF_hs_LentiORF-Jred.relationship": {
+        "type": "text"
+    },
+    "reagent.GNF_mm+hs-MGC.id": {
+        "type": "keyword"
+    },
+    "reagent.GNF_mm+hs-MGC.relationship": {
+        "type": "text"
+    },
+    "reagent.GNF_mm+hs_RetroCDNA.id": {
+        "type": "keyword"
+    },
+    "reagent.GNF_mm+hs_RetroCDNA.relationship": {
+        "type": "text"
+    },
+    "reagent.GNF_mm-GIPZ_shRNA.id": {
+        "type": "keyword"
+    },
+    "reagent.GNF_mm-GIPZ_shRNA.relationship": {
+        "type": "text"
+    },
+    "reagent.GNF_mm-TLR_lenti_shRNA.id": {
+        "type": "keyword",
+        "description": "Identifier for the lentiviral shRNA reagent targeting mouse Toll-like receptors (TLRs) from GNF (Genomics Institute of the Novartis Research Foundation).",
+        "examples": [
+            "GNF987654",
+            "GNF123456"
+        ]
+    },
+    "reagent.GNF_mm-TLR_lenti_shRNA.relationship": {
+        "type": "text",
+        "description": "Relationship details for the lentiviral shRNA reagent targeting mouse TLRs, potentially indicating its target gene, experimental conditions, or interactions.",
+        "examples": [
+            "Targets TLR4",
+            "Knockdown efficiency rate"
+        ]
+    },
+    "reagent.GNF_mm-kinase_lenti-shRNA.id": {
+        "type": "keyword",
+        "description": "Identifier for the lentiviral shRNA reagent targeting mouse kinases from GNF.",
+        "examples": [
+            "GNF645321",
+            "GNF765432"
+        ]
+    },
+    "reagent.GNF_mm-kinase_lenti-shRNA.relationship": {
+        "type": "text",
+        "description": "Relationship details for the lentiviral shRNA reagent targeting mouse kinases, which may include target genes and associated pathways.",
+        "examples": [
+            "Targets CDK1",
+            "Inhibits kinase activity"
+        ]
+    },
+    "reagent.GNF_mm-kinase_plasmid-shRNA.id": {
+        "type": "keyword",
+        "description": "Identifier for the plasmid shRNA reagent targeting mouse kinases from GNF.",
+        "examples": [
+            "GNF432167",
+            "GNF876543"
+        ]
+    },
+    "reagent.GNF_mm-kinase_plasmid-shRNA.relationship": {
+        "type": "text",
+        "description": "Relationship details for the plasmid shRNA reagent targeting mouse kinases, possibly describing its effects and interactions.",
+        "examples": [
+            "Inhibits EGFR",
+            "Downregulates MAPK signaling"
+        ]
+    },
+    "reagent.IDT_27mer_hs_ATPase_siRNAs.id": {
+        "type": "keyword",
+        "description": "Identifier for the 27-mer siRNA reagent targeting human ATPases from Integrated DNA Technologies (IDT).",
+        "examples": [
+            "IDT009876",
+            "IDT765432"
+        ]
+    },
+    "reagent.IDT_27mer_hs_ATPase_siRNAs.relationship": {
+        "type": "text",
+        "description": "Relationship details for the 27-mer siRNA reagent targeting human ATPases, which could include gene targets and biological effects.",
+        "examples": [
+            "Silences ATP1A1 gene",
+            "Reduces ATPase activity"
+        ]
+    },
+    "reagent.Invitrogen_IVTHSSIPKv2.id": {
+        "type": "keyword",
+        "description": "Identifier for a specific siRNA reagent from Invitrogen, likely used for gene silencing in functional studies.",
+        "examples": [
+            "IVT567890",
+            "IVT123456"
+        ]
+    },
+    "reagent.Invitrogen_IVTHSSIPKv2.relationship": {
+        "type": "text",
+        "description": "Relationship details for the siRNA reagent from Invitrogen, including information about its target gene and experimental use.",
+        "examples": [
+            "Targets PKB/AKT gene",
+            "Effective in cancer cell lines"
+        ]
+    },
+    "reagent.MasterSecretomicsList.id": {
+        "description": "A unique identifier for an entry in the Master Secretomics List.",
+        "type": "keyword"
+    },
+    "reagent.MasterSecretomicsList.relationship": {
+        "description": "Textual information describing the relationships or interactions pertaining to entries in the Master Secretomics List.",
+        "type": "text"
+    },
+    "reagent.NIBRI_hs-Secretome_pDEST.id": {
+        "description": "A unique identifier for an entry in the NIBRI human Secretome pDEST list.",
+        "type": "keyword"
+    },
+    "reagent.NIBRI_hs-Secretome_pDEST.relationship": {
+        "description": "Textual information depicting the relationships or interactions related to the NIBRI human Secretome pDEST entries.",
+        "type": "text"
+    },
+    "reagent.NOVART_hs-genome_siRNA.id": {
+        "description": "A unique identifier for an entry in the NOVART human genome siRNA list.",
+        "type": "keyword"
+    },
+    "reagent.NOVART_hs-genome_siRNA.relationship": {
+        "description": "Textual information explaining the relationships or interactions specific to the NOVART human genome siRNA entries.",
+        "type": "text"
+    },
+    "reagent.Qiagen_mouse_QMIHSINHIBv1.id": {
+        "description": "A unique identifier for an entry in the Qiagen mouse QMIHSINHIBv1 list.",
+        "type": "keyword"
+    },
+    "reagent.Qiagen_mouse_QMIHSINHIBv1.relationship": {
+        "description": "Textual information detailing the relationships or interactions relevant to the Qiagen mouse QMIHSINHIBv1 entries.",
+        "type": "text"
+    },
+    "reagent.Qiagen_mouse_QMIHSMIMv1.id": {
+        "description": "A unique identifier for an entry in the Qiagen mouse QMIHSMIMv1 list.",
+        "type": "keyword"
+    },
+    "reagent.Qiagen_mouse_QMIHSMIMv1.relationship": {
+        "description": "Textual information outlining the relationships or interactions associated with the Qiagen mouse QMIHSMIMv1 entries.",
+        "type": "text"
+    },
+    "refseq.genomic": {
+        "type": "text",
+        "description": "A text field containing RefSeq identifiers for genomic sequences."
+    },
+    "refseq.protein": {
+        "type": "text",
+        "description": "A text field containing RefSeq identifiers for protein sequences."
+    },
+    "refseq.rna": {
+        "type": "text",
+        "description": "A text field containing RefSeq identifiers for RNA sequences."
+    },
+    "reporter.AraGene-1_0": {
+        "type": "keyword",
+        "description": "A keyword field referencing a specific reporter gene set for Arabidopsis thaliana."
+    },
+    "reporter.BovGene-1_0": {
+        "type": "keyword",
+        "description": "A keyword field referencing a specific reporter gene set for Bos taurus (cattle)."
+    },
+    "reporter.CanGene-1_0": {
+        "type": "keyword",
+        "description": "A keyword field referencing a specific reporter gene set for Canis lupus familiaris (dog)."
+    },
+    "reporter.ChiGene-1_0": {
+        "type": "keyword",
+        "description": "A keyword field referencing a specific reporter gene set for Chicken (Gallus gallus)."
+    },
+    "reporter.CyRGene-1_0": {
+        "type": "keyword",
+        "description": "A keyword field referencing a specific reporter gene set for Cynomolgus monkey (Macaca fascicularis)."
+    },
+    "reporter.CynGene-1_0": {
+        "type": "keyword",
+        "description": "A keyword field referencing a specific reporter gene set for another species, likely variably spelt or represented."
+    },
+    "reporter.DroGene-1_0": {
+        "type": "keyword",
+        "description": "A keyword field referencing a specific reporter gene set for Drosophila melanogaster (fruit fly)."
+    },
+    "reporter.EleGene-1_0": {
+        "description": "Affymetrix gene expression array for Elephas maximus (Asian elephant)."
+    },
+    "reporter.EquGene-1_0": {
+        "description": "Affymetrix gene expression array for Equus caballus (horse)."
+    },
+    "reporter.FelGene-1_0": {
+        "description": "Affymetrix gene expression array for Felis catus (cat)."
+    },
+    "reporter.GNF1H": {
+        "description": "Gene expression array used in GNF Human gene expression atlas."
+    },
+    "reporter.GNF1M": {
+        "description": "Gene expression array used in GNF Mouse gene expression atlas."
+    },
+    "reporter.GuiGene-1_0": {
+        "description": "Affymetrix gene expression array for Cavia porcellus (guinea pig)."
+    },
+    "reporter.HG-U133_Plus_2": {
+        "description": "Affymetrix Human Genome U133 Plus 2.0 Array for human gene expression profiling."
+    },
+    "reporter.HG-U95Av2": {
+        "description": "Affymetrix Human Genome U95 Version 2 Array for human gene expression profiling."
+    },
+    "reporter.HG-U95B": {
+        "description": "Affymetrix Human Genome U95B Array, a supplementary array for human gene expression profiling."
+    },
+    "reporter.HTA-2_0": {
+        "description": "Affymetrix Human Transcriptome Array 2.0 for comprehensive gene expression and transcript analysis."
+    },
+    "reporter.HuEx-1_0": {
+        "type": "keyword",
+        "description": "A keyword representing a specific microarray platform designed for human exon-level expression analysis."
+    },
+    "reporter.HuGene-1_1": {
+        "type": "keyword",
+        "description": "A keyword representing the first version of a microarray platform for gene-level expression analysis in humans."
+    },
+    "reporter.HuGene-2_1": {
+        "type": "keyword",
+        "description": "A keyword representing the second version of a microarray platform for gene-level expression analysis in humans."
+    },
+    "reporter.MG-U74Av2": {
+        "type": "keyword",
+        "description": "A keyword denoting the second version of the 'MG-U74A' microarray platform, typically used for gene expression analysis in mice."
+    },
+    "reporter.MG-U74Bv2": {
+        "type": "keyword",
+        "description": "A keyword denoting the second version of the 'MG-U74B' microarray platform, typically used for gene expression analysis in mice."
+    },
+    "reporter.MTA-1_0": {
+        "type": "keyword",
+        "description": "A keyword representing the first version of the 'Mouse Transcriptome Assay' microarray platform for studying mouse gene expression."
+    },
+    "reporter.MarGene-1_0": {
+        "type": "keyword",
+        "description": "A keyword representing the first version of a microarray platform for gene-level expression analysis in various marine organisms."
+    },
+    "reporter.MoEx-1_0": {
+        "type": "keyword",
+        "description": "A keyword representing a specific microarray platform designed for mouse exon-level expression analysis."
+    },
+    "reporter.MoGene-1_1": {
+        "type": "keyword",
+        "description": "A keyword representing the first version of a microarray platform for gene-level expression analysis in mice."
+    },
+    "reporter.MoGene-2_1": {
+        "type": "keyword",
+        "description": "A keyword representing the second version of a microarray platform for gene-level expression analysis in mice."
+    },
+    "reporter.Mouse430_2": {
+        "type": "keyword",
+        "description": "Affymetrix Mouse Genome 430 2.0 Array probeset identifiers"
+    },
+    "reporter.PorGene-1_0": {
+        "type": "keyword",
+        "description": "Porcine gene expression array 1.0 probeset identifiers"
+    },
+    "reporter.RCnGene-1_0": {
+        "type": "keyword",
+        "description": "Canine gene expression array 1.0 probeset identifiers"
+    },
+    "reporter.RG-U34A": {
+        "type": "keyword",
+        "description": "Affymetrix Rat Genome U34A Array probeset identifiers"
+    },
+    "reporter.RG-U34B": {
+        "type": "keyword",
+        "description": "Affymetrix Rat Genome U34B Array probeset identifiers"
+    },
+    "reporter.RJpGene-1_0": {
+        "type": "keyword",
+        "description": "Japanese gene expression array 1.0 probeset identifiers"
+    },
+    "reporter.RUSGene-1_0": {
+        "type": "keyword",
+        "description": "US gene expression array 1.0 probeset identifiers"
+    },
+    "reporter.RaEx-1_0": {
+        "type": "keyword",
+        "description": "Rat Exon 1.0 ST array probeset identifiers"
+    },
+    "reporter.RaGene-1_1": {
+        "type": "keyword",
+        "description": "Rat Gene 1.1 ST array probeset identifiers"
+    },
+    "reporter.RaGene-2_1": {
+        "type": "keyword",
+        "description": "Rat Gene 2.1 ST array probeset identifiers"
+    },
+    "reporter.RabGene-1_0": {
+        "description": "Reporter identifier for RabGene-1_0 platform",
+        "type": "keyword"
+    },
+    "reporter.Rat230_2": {
+        "description": "Reporter identifier for Rat230_2 platform",
+        "type": "keyword"
+    },
+    "reporter.RheGene-1_0": {
+        "description": "Reporter identifier for RheGene-1_0 platform",
+        "type": "keyword"
+    },
+    "reporter.SoyGene-1_0": {
+        "description": "Reporter identifier for SoyGene-1_0 platform",
+        "type": "keyword"
+    },
+    "reporter.ZebGene-1_0": {
+        "description": "Reporter identifier for ZebGene-1_0 platform",
+        "type": "keyword"
+    },
+    "reporter.snowball": {
+        "description": "Reporter identifier for snowball platform",
+        "type": "keyword"
+    },
+    "retired": {
+        "description": "Boolean flag indicating if the reporter is retired",
+        "type": "long"
+    },
+    "smpdb": {
+        "description": "Link or identifier to the Small Molecule Pathway Database (SMPDB)",
+        "type": "text"
+    },
+    "summary": {
+        "description": "Summary or brief description of the reporter",
+        "type": "text"
+    },
+    "symbol": {
+        "description": "Symbol associated with the reporter",
+        "type": "keyword"
+    },
+    "taxid": {
+        "description": "An identifier for a specific taxonomic group, such as a species, genus, or family, used in databases like NCBI Taxonomy.",
+        "type": "integer"
+    },
+    "type_of_gene": {
+        "description": "A categorization of the gene, such as protein-coding, RNA gene, pseudogene, etc.",
+        "type": "keyword"
+    },
+    "umls.cui": {
+        "description": "Concept Unique Identifier from the Unified Medical Language System (UMLS), used for mapping concepts across different biomedical vocabularies.",
+        "type": "keyword"
+    },
+    "umls.protein_cui": {
+        "description": "Concept Unique Identifier from UMLS specifically associated with protein-related concepts.",
+        "type": "keyword"
+    },
+    "unigene": {
+        "description": "An identifier from UniGene, a system for automatically partitioning GenBank sequences into a non-redundant set of gene-oriented clusters.",
+        "type": "keyword"
+    },
+    "uniprot.Swiss-Prot": {
+        "description": "An identifier from the Swiss-Prot section of the UniProt database, which provides manually annotated and reviewed protein sequences.",
+        "type": "keyword"
+    },
+    "uniprot.TrEMBL": {
+        "description": "An identifier from the TrEMBL section of the UniProt database, which contains automatically annotated and unreviewed protein sequences.",
+        "type": "keyword"
+    },
+    "wikipathways": {
+        "description": "Information related to biological pathways as documented in WikiPathways, a collaborative platform dedicated to biological pathways.",
+        "type": "text"
+    },
+    "wikipedia.url_stub": {
+        "description": "A partial URL or identifier for the corresponding Wikipedia page related to the gene or protein.",
+        "type": "text"
+    },
+    "yeastcyc": {
+        "description": "Information related to metabolic pathways in yeast, as documented in YeastCyc, a database for the yeast Saccharomyces cerevisiae.",
+        "type": "text"
+    }
+}

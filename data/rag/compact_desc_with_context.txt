@@ -1,0 +1,810 @@
+AllianceGenome - A unique identifier from the Alliance of Genome Resources database, which integrates data from several model organism databases.
+
+
+AnimalQTLdb - The Animal QTLdb field contains data regarding Quantitative Trait Loci (QTL) in animals such as livestock, typically used for understanding the genetic basis of complex traits like skeletal or cardiovascular traits.
+
+
+FLYBASE - A unique identifier from FlyBase, a database dedicated to the genetics and genomics of Drosophila melanogaster.
+
+
+HGNC - A unique identifier provided by the HUGO Gene Nomenclature Committee, which assigns standardized gene symbols and names to human genes.
+
+
+HPRD - A unique identifier from the Human Protein Reference Database, a resource for exploring the protein-protein interactions of human proteins.
+
+
+MGI - An identifier from the Mouse Genome Informatics database, which provides data on the genetics, genomics, and biology of the laboratory mouse.
+
+
+MIM - A unique identifier from the Online Mendelian Inheritance in Man database, a comprehensive and authoritative compendium of human genes and genetic phenotypes.
+
+
+RATMAP - An identifier from the Rat Genome Database genomics tool, which provides data specific to rat genetics and genomics.
+
+
+RGD - A unique identifier from the Rat Genome Database, which is dedicated to providing rat genomic data and related biological information for research.
+
+
+SGD - A unique identifier from the Saccharomyces Genome Database, which provides genomic information on the budding yeast, Saccharomyces cerevisiae.
+
+
+TAIR - This field contains a keyword representing the identifier from The Arabidopsis Information Resource, a database for the model organism Arabidopsis thaliana.
+
+
+Vega - This field stores text data referencing the identifier in the Vega Genome Browser, which is a resource for annotated vertebrate and other eukaryotic genomes.
+
+
+WormBase - This field holds a keyword that identifies a gene or other feature in WormBase, a database dedicated to the biology and genomics of Caenorhabditis elegans and related nematodes.
+
+
+Xenbase - This field includes a keyword representing the identifier in Xenbase, a model organism database for Xenopus biology and genomics.
+
+
+ZFIN - This field contains a keyword referring to the entry in ZFIN, the Zebrafish Model Organism Database that provides genetic and genomic data for the zebrafish (Danio rerio).
+
+
+accession.genomic - This field contains a list of text entries representing the GenBank accession numbers for genomic sequences related to the gene or feature.
+
+
+accession.protein - This field holds a list of text entries for GenBank accession numbers associated with protein sequences related to the gene or feature.
+
+
+accession.rna - This field includes a list of text entries indicating the GenBank accession numbers for RNA sequences pertaining to the gene or feature.
+
+
+alias - This field is a keyword that provides alternative names or symbols commonly used to refer to the gene or feature.
+
+
+biocarta - This field contains text data referencing pathways or identifiers in BioCarta, which offers information on biological pathways and systems.
+
+
+clingen.clinical_validity.classification - A categorical term representing the classification of the clinical validity for a gene-disease pair according to ClinGen guidelines.
+
+
+clingen.clinical_validity.classification_date - The date when the clinical validity classification was assessed or assigned.
+
+
+clingen.clinical_validity.disease_label - The textual name or label of the disease associated with the gene being evaluated for clinical validity.
+
+
+clingen.clinical_validity.gcep - The Gene Curation Expert Panel (GCEP) responsible for evaluating the gene-disease relationship.
+
+
+clingen.clinical_validity.moi - The mode of inheritance for the genetic condition being assessed, using standardized terms.
+
+
+clingen.clinical_validity.mondo - The MONDO ontology identifier corresponding to the disease term in the Clinical Validity Evaluation.
+
+
+clingen.clinical_validity.online_report - A URL or reference to the online report detailing the clinical validity evaluation of the gene-disease pair.
+
+
+clingen.clinical_validity.sop - The Standard Operating Procedure (SOP) version used for the clinical validity evaluation.
+
+
+ec - The Enzyme Commission (EC) number that classifies the enzyme based on the chemical reactions they catalyze.
+
+
+ensembl.gene - The Ensembl identifier for the gene, which is a unique reference used to describe the gene in the Ensembl database.
+
+
+ensembl.protein - This field contains an array of strings representing the unique Ensembl stable identifiers for protein sequences associated with a gene. These identifiers help in tracking protein isoforms corresponding to specific transcription events.
+
+
+ensembl.transcript - This field contains an array of strings representing the unique Ensembl stable identifiers for transcripts of a gene. Each identifier corresponds to a specific RNA sequence processed from the gene’s DNA.
+
+
+ensembl.type_of_gene - This field contains a string indicating the classification of the gene according to the Ensembl database. Common classifications include ""protein_coding,"" ""noncoding,"" ""pseudogene,"" etc., describing the gene's function or lack thereof.
+
+
+entrezgene - This field contains a string representing the unique identifier assigned by NCBI's Entrez Gene database. It is used to uniquely identify genes in this centralized resource.
+
+
+exac.bp - This field contains an integer denoting the base pair length of the sequenced exon in the Exome Aggregation Consortium (ExAC) database. It is useful for genomic mapping and variant analysis.
+
+
+exac.cds_end - This field contains an integer indicating the end position of the coding sequence (CDS) on the chromosome for a gene as recorded in the ExAC database, helping to define the precise location of genetic elements.
+
+
+exac.cds_start - This field contains an integer indicating the start position of the coding sequence (CDS) on the chromosome for a gene as captured in the ExAC database, delineating where the coding region begins.
+
+
+exac.n_exons - This field contains an integer representing the total number of exons present in a gene's transcript as listed in the ExAC database. Exons are the coding regions that are expressed in the mRNA.
+
+
+exac.transcript - This field contains a string providing the stable identifier for a specific transcript of a gene in the ExAC database, signifying a particular spliced RNA product from the gene.
+
+
+generif.pubmed - This field contains an array of long integers with references to PubMed articles, where gene-related functional insights (GeneRIFs) or specific discussions of a gene's function have been documented.
+
+
+generif.text - A description of a gene function derived from scientific literature, may include free text such as the fact that specific proteins shuttle between cellular compartments.
+
+
+genomic_pos.chr - The chromosome number on which the gene is located, specified as a keyword or string.
+
+
+genomic_pos.end - The ending position of the gene on the chromosome, represented as a long integer.
+
+
+genomic_pos.start - The starting position of the gene on the chromosome, represented as a long integer.
+
+
+genomic_pos.strand - The strand of DNA on which the gene is located, typically represented as a byte value (1 for positive strand, -1 for negative strand).
+
+
+genomic_pos_hg19.chr - The chromosome number for the gene using the human genome assembly version GRCh37/hg19.
+
+
+genomic_pos_hg19.end - The ending position of the gene on the chromosome using the GRCh37/hg19 human genome assembly, as a long integer.
+
+
+genomic_pos_hg19.start - The starting position of the gene on the chromosome using the GRCh37/hg19 human genome assembly, as a long integer.
+
+
+genomic_pos_hg19.strand - The DNA strand (1 or -1) of the gene location based on the GRCh37/hg19 human genome assembly.
+
+
+genomic_pos_mm9.chr - The chromosome number for the gene using the mouse genome assembly version mm9.
+
+
+genomic_pos_mm9.end - The ending genomic position on the mouse genome assembly version mm9, represented as a long integer value indicating the precise base pair location on the chromosome where the gene or feature ends.
+
+
+genomic_pos_mm9.start - The starting genomic position on the mouse genome assembly version mm9, represented as a long integer value indicating the precise base pair location on the chromosome where the gene or feature begins.
+
+
+genomic_pos_mm9.strand - A byte indicating the strand orientation on the mouse genome assembly version mm9. It can be either 1 or -1, where 1 denotes the positive (sense) strand and -1 denotes the negative (antisense) strand.
+
+
+go.BP.category - The category of the biological process (BP) term as annotated in the Gene Ontology (GO) database. Typically represented as text to describe the overarching category of the specific biological process.
+
+
+go.BP.evidence - Codes indicating the evidence supporting the association of a gene with a particular biological process in the GO database. This evidence can include experimental, computational, author statements, etc.
+
+
+go.BP.id - A unique keyword identifier for a biological process term in the Gene Ontology, which provides a standardized description of processes in which a gene product is involved.
+
+
+go.BP.pubmed - A long integer representing the PubMed ID(s) of publication(s) that provide evidence for the gene's involvement in the specified biological process. These are references to scientific literature.
+
+
+go.BP.term - The text name of a specific biological process as defined in the Gene Ontology, describing processes in which a gene product is involved.
+
+
+go.CC.category - The category of the cellular component (CC) term as annotated in the Gene Ontology (GO) database. Typically represented as text to describe the overarching category of the specific cellular component.
+
+
+go.CC.evidence - Codes indicating the evidence supporting the association of a gene with a particular cellular component in the GO database. This evidence can include experimental, computational, author statements, etc.
+
+
+go.CC.id - A unique identifier for a cellular component in the Gene Ontology (GO) database, represented as a keyword.
+
+
+go.CC.pubmed - A reference to related scientific publications in the PubMed database associated with the cellular component term, represented as a long integer.
+
+
+go.CC.term - The textual description of a cellular component as defined in the Gene Ontology database, represented as text.
+
+
+go.MF.category - The category or aspect of molecular function within the Gene Ontology hierarchy, represented as text.
+
+
+go.MF.evidence - A code representing the type of evidence supporting the annotation of this molecular function in the Gene Ontology, represented as text.
+
+
+go.MF.id - A unique identifier for a molecular function in the Gene Ontology (GO) database, represented as a keyword.
+
+
+go.MF.pubmed - A reference to related scientific publications in the PubMed database associated with the molecular function term, represented as a long integer.
+
+
+go.MF.term - The textual description of a molecular function as defined in the Gene Ontology database, represented as text.
+
+
+homologene.genes - A reference to related genes in the HomoloGene database, represented as a long integer.
+
+
+homologene.id - A unique identifier for a homologous genes cluster in the HomoloGene database, represented as a long integer.
+
+
+humancyc - A textual identifier or description linking to the HumanCyc database, which provides information about the human biochemical pathways and genome.
+
+
+interpro.desc - Detailed text description of a protein domain as identified by the InterPro database, which integrates predictive models or 'signatures' representing protein domains, families and functional sites.
+
+
+interpro.id - A unique keyword identifier for a protein domain in the InterPro database. This identifier is used to link to detailed information about specific protein domains.
+
+
+interpro.short_desc - A concise textual description of a protein domain from the InterPro database, summarizing its feature or function.
+
+
+ipi - A keyword identifier from the International Protein Index (IPI), historically used to provide a centralized source for protein sequences.
+
+
+kegg - A text field containing information from the KEGG (Kyoto Encyclopedia of Genes and Genomes) database, which includes data on pathways, complex systems, genes, and chemical substances.
+
+
+locus_tag - A keyword used to uniquely identify a gene locus within a specific genome, often used in genomic databases to track genes across different databases and annotations.
+
+
+map_location - Text information indicating the cytogenetic location of a gene on a chromosome, often formatted to include details like band number and arm (e.g., q13.2 for chromosome 12).
+
+
+miRBase - A keyword identifier from the miRBase database, which is a resource for microRNA sequences and annotations.
+
+
+mousecyc - A textual identifier or description linking to the MouseCyc database, a repository of metabolic pathways and information specific to the mouse genome.
+
+
+name - The primary name of the gene or protein as recognized in scientific databases.
+
+
+netpath - A database focusing on signaling pathways in human cells, especially those related to cancer.
+
+
+other_names - Alternative names or synonyms for the gene or protein that may be used in different studies or databases.
+
+
+pantherdb.Araport - An identifier linking the gene or protein to the Araport genome database for Arabidopsis thaliana in the PANTHER classification system.
+
+
+pantherdb.EcoGene - A unique identifier for the gene or protein in the EcoGene database, which focuses on Escherichia coli.
+
+
+pantherdb.Ensembl - The Ensembl database unique identifier for the gene or protein, as cataloged in the PANTHER system for contributing species.
+
+
+pantherdb.EnsemblGenome - An identifier in the Ensembl Genome database linked to the gene/protein entry within the PANTHER classification system, usually for non-vertebrate species.
+
+
+pantherdb.FlyBase - The FlyBase-specific identifier for the gene or protein entry within the PANTHER database, typically referring to Drosophila melanogaster.
+
+
+pantherdb.Gene - An identifier used within the PANTHER database that relates to a specific gene reference.
+
+
+pantherdb.GeneID - A number used in public databases to uniquely refer to the gene or protein within the PANTHER classification system.
+
+
+pantherdb.Gene_Name - The standard name of the gene as recorded in the PANTHER database, used for consistent identification across different studies and databases.
+
+
+pantherdb.Gene_ORFName - The open reading frame (ORF) name of the gene, which refers to the sequence of DNA that can be translated into a protein. This designation is often used for gene identification prior to fully characterizing the gene function.
+
+
+pantherdb.Gene_OrderedLocusName - An alternative identifier for the gene based on its specific locus within the genome, providing a way to reference genes according to their physical location.
+
+
+pantherdb.HGNC - The HUGO Gene Nomenclature Committee (HGNC) ID for the gene, serving as a unique identifier within the standardized human gene nomenclature system.
+
+
+pantherdb.MGI - The Mouse Genome Informatics (MGI) identifier for the gene, useful for linking the PANTHER database information to mouse genetic studies and data.
+
+
+pantherdb.PomBase - The identifier for this gene within the PomBase database, which focuses on the model organism Schizosaccharomyces pombe (fission yeast).
+
+
+pantherdb.RGD - The Rat Genome Database (RGD) identifier corresponding to this gene, facilitating cross-species comparisons and research involving rats.
+
+
+pantherdb.SGD - The Saccharomyces Genome Database (SGD) identifier, used for associating this gene with data pertaining to the yeast model organism Saccharomyces cerevisiae.
+
+
+pantherdb.TAIR - The Arabidopsis Information Resource (TAIR) identifier for the gene, linking it to genetic studies in the model plant Arabidopsis thaliana.
+
+
+pantherdb.WormBase - The WormBase identifier for this gene, providing a connection to information concerning the model organism Caenorhabditis elegans (C. elegans).
+
+
+pantherdb.ZFIN - This field contains identifiers that link to the Zebrafish Information Network (ZFIN), which is a comprehensive resource for genetic, genomic and developmental information on zebrafish.
+
+
+pantherdb.dictyBase - This field contains identifiers that reference entries in dictyBase, which is a database for the model organism Dictyostelium discoideum, providing genetic and genomic information.
+
+
+pantherdb.ortholog.Araport - This field contains ortholog identifiers from Araport, a resource providing Arabidopsis thaliana genomic data.
+
+
+pantherdb.ortholog.EcoGene - This field contains ortholog identifiers from EcoGene, which is a curated database for Escherichia coli K-12 genetics and molecular biology.
+
+
+pantherdb.ortholog.Ensembl - This field contains ortholog identifiers from Ensembl, a genomic information resource that provides information about the genomes of various eukaryotic species.
+
+
+pantherdb.ortholog.EnsemblGenome - This field contains ortholog identifiers from Ensembl Genomes, which focuses on non-vertebrate species.
+
+
+pantherdb.ortholog.FlyBase - This field contains ortholog identifiers in FlyBase, which is a database for Drosophila genetics and molecular biology.
+
+
+pantherdb.ortholog.Gene - This field provides the name or symbol of an ortholog gene in various species, facilitating comparative genomics study.
+
+
+pantherdb.ortholog.GeneCards - This field contains ortholog linkages to GeneCards, a comprehensive database of human genes that provides genomic, proteomic, transcriptomic, genetic and functional information.
+
+
+pantherdb.ortholog.GeneID - This field includes ortholog identifiers as represented by GeneID, a unique identifier for genes in NCBI's Entrez Gene database.
+
+
+pantherdb.ortholog.Gene_Name - The official name of the gene as recognized by a standardized nomenclature authority.
+
+
+pantherdb.ortholog.Gene_ORFName - The open reading frame (ORF) name associated with the gene, often used in large-scale genomics projects or databases.
+
+
+pantherdb.ortholog.Gene_OrderedLocusName - An identifier assigned to a gene based on its location within a genome, indicating its ordered position on a chromosome.
+
+
+pantherdb.ortholog.HGNC - A unique identifier from the HUGO Gene Nomenclature Committee for a human gene, used to provide consistency in gene naming.
+
+
+pantherdb.ortholog.MGI - A database identifier from the Mouse Genome Informatics system, used to link gene information specific to mice.
+
+
+pantherdb.ortholog.PomBase - A database reference for a gene in the PomBase, a comprehensive database for the fission yeast Schizosaccharomyces pombe.
+
+
+pantherdb.ortholog.RGD - An identifier from the Rat Genome Database, a platform for genetic and genomic data for the rat model organism.
+
+
+pantherdb.ortholog.SGD - An identifier from the Saccharomyces Genome Database, which provides genetic and molecular biology data for the yeast Saccharomyces cerevisiae.
+
+
+pantherdb.ortholog.TAIR - An identifier used by The Arabidopsis Information Resource, a database that collects and disseminates information on the model plant Arabidopsis thaliana.
+
+
+pantherdb.ortholog.WormBase - A database reference for genes in WormBase, a comprehensive resource for information on the biology of Caenorhabditis elegans and related nematodes.
+
+
+pantherdb.ortholog.ZFIN - ZFIN identifier for a gene ortholog in zebrafish species in the PantherDB database.
+
+
+pantherdb.ortholog.dictyBase - DictyBase identifier for a gene ortholog related to the social amoeba Dictyostelium discoideum in the PantherDB database.
+
+
+pantherdb.ortholog.ortholog_type - Specifies the type of orthologous relationship, using standardized codes (e.g., 'LDO' for least diverged ortholog) within the PantherDB database.
+
+
+pantherdb.ortholog.panther_family - Identifier for the protein family to which the ortholog belongs within the PantherDB database, denoting a group of evolutionarily related proteins.
+
+
+pantherdb.ortholog.taxid - The taxonomy identifier for the organism of the gene ortholog in the PantherDB database, often used to link organisms to their respective orthologs.
+
+
+pantherdb.ortholog.uniprot_kb - UniProtKB accession number for the ortholog in the PantherDB database, linking to the UniProt Knowledge Base for protein details.
+
+
+pantherdb.uniprot_kb - UniProtKB accession number linked to the specific entry within the PantherDB, providing information on the protein sequence and functional details.
+
+
+pathway.biocarta.id - Text identifier for a specific biological pathway in the BioCarta database, used to map genes to known biological processes.
+
+
+pathway.biocarta.name - Name of the biological pathway as cataloged in the BioCarta database, describing the biological process or pathway in which the gene is involved.
+
+
+pathway.humancyc.id - Text identifier for a pathway in the HumanCyc database, detailing the metabolic pathway or biochemical process related to human genes.
+
+
+pathway.humancyc.name - The name of the pathway in the HumanCyc database, which provides detailed pathway/genome databases for Homo sapiens and supports high-level analysis of biological pathways.
+
+
+pathway.kegg.id - A unique identifier for the pathway in the Kyoto Encyclopedia of Genes and Genomes (KEGG) database, used to represent a specific pathway within this comprehensive resource for understanding high-level functions and utilities of the biological system.
+
+
+pathway.kegg.name - The name of the pathway in the KEGG database, which provides a collection of manually drawn pathway maps representing molecular interaction, reaction, and relation networks for various cellular processes.
+
+
+pathway.mousecyc.id - A unique identifier for the pathway in the MouseCyc database, which includes information about metabolic and signaling pathways in Mus musculus (mouse).
+
+
+pathway.mousecyc.name - The name of the pathway in the MouseCyc database, which provides pathway/genome databases for Mus musculus and supports analysis of biological pathways in mice.
+
+
+pathway.netpath.id - A unique identifier for the pathway in the NetPath database, which contains signal transduction pathways, transcription factor networks, and other pathways of human systems.
+
+
+pathway.netpath.name - The name of the pathway in the NetPath database, which provides information about biological pathways involved in signal transduction and other essential cellular processes.
+
+
+pathway.pharmgkb.id - A unique identifier for the pathway in the PharmGKB database, which encompasses information about how genes affect an individual's response to drugs, with the broader aim of improving pharmacogenomics research.
+
+
+pathway.pharmgkb.name - The name of the pathway in the PharmGKB database, known for its focus on pharmacogenomics and the interactions between genes, drugs, diseases, and pathways.
+
+
+pathway.pid.id - A unique identifier for the pathway in the NCI Pathway Interaction Database (PID), which was used to store curated information about molecular interactions and regulatory events in human signal transduction pathways.
+
+
+pathway.pid.name - The name of a biological pathway from the Pathway Interaction Database (PID) that is associated with the gene or protein.
+
+
+pathway.reactome.id - The identifier for a biological pathway in the Reactome database that is associated with the gene or protein.
+
+
+pathway.reactome.name - The name of a biological pathway in the Reactome database that is associated with the gene or protein.
+
+
+pathway.smpdb.id - The identifier for a Small Molecule Pathway Database (SMPDB) pathway associated with the gene or protein.
+
+
+pathway.smpdb.name - The name of a Small Molecule Pathway Database (SMPDB) pathway associated with the gene or protein.
+
+
+pathway.wikipathways.id - The identifier for a biological pathway in the WikiPathways database that is associated with the gene or protein.
+
+
+pathway.wikipathways.name - The name of a biological pathway in the WikiPathways database that is associated with the gene or protein.
+
+
+pathway.yeastcyc.id - The identifier for a pathway in the YeastCyc database that is relevant to yeast biology and is associated with the gene or protein.
+
+
+pathway.yeastcyc.name - The name of a pathway in the YeastCyc database that is relevant to yeast biology and is associated with the gene or protein.
+
+
+pdb - The Protein Data Bank (PDB) identifier(s) for the 3D structural data of the protein, providing insights into its molecular configuration.
+
+
+pfam - A unique identifier for a protein family from the Pfam database, which provides functional information on the structure and function of protein families based on sequence alignments and hidden Markov models.
+
+
+pharmgkb - A unique identifier from the PharmGKB database, which encompasses information regarding how variations in genes affect a person's response to drugs, aimed at researchers and clinicians working in pharmacogenomics and personalized medicine.
+
+
+pharos.target_id - An integer identifier for a biological target in the Pharos database, which categorizes proteins based on their druggability or tractability for drug research, supporting the drug discovery process.
+
+
+pharos.tdl - A string defining the Target Development Level (TDL) for a particular target within the Pharos database. This classification helps in understanding the protein's relevance in drug discovery and its associated level of validation.
+
+
+pid - A text field holding an identifier that likely links to a pathway identifier database which maps biological processes, potentially linked as a reference to specific pathways.
+
+
+pir - A keyword identifier from the Protein Information Resource (PIR), which holds data related to protein sequences and functional information, serving as a key resource for protein classification and annotation.
+
+
+prosite - A unique identifier in the PROSITE database, a resource providing descriptions for protein domains, families, and functional sites, along with associated patterns, matrices, and profiles to identify them in protein sequences.
+
+
+reactome - A text field that contains identifiers or descriptions from the Reactome database, a curated database of pathways and reactions in human biology, aiming to elucidate biological processes at the molecular level.
+
+
+reagent.CM-LibrX-no-seq.id - A keyword identifier used to label a specific reagent within a library, particularly in a context where sequence information is not provided, within a larger collection of reagents employed for biological research or experimentation.
+
+
+reagent.CM-LibrX-no-seq.relationship - A textual descriptor capturing the relationship or role the specific reagent plays within a biological context or experiment, serving as metadata for understanding usage without sequence information.
+
+
+reagent.CondMedia_CM_LibrAB.id - A unique identifier for compounds in the CondMedia_CM_LibrAB reagent library, represented as a keyword field for efficient searching and precise filtering.
+
+
+reagent.CondMedia_CM_LibrAB.relationship - Describes the relationship between the media and the biological process or entity it is involved with, stored as a text field to capture potentially complex descriptive analysis.
+
+
+reagent.GNF_Qia_hs-genome_v1_siRNA.id - The identifier for an siRNA reagent from the GNF_Qia human genome version 1 library, stored as a keyword to ensure unambiguous identification across databases.
+
+
+reagent.GNF_Qia_hs-genome_v1_siRNA.relationship - Details the relationship or interaction of the siRNA with other biological entities, stored as text to encapsulate descriptive narratives of its biological effects or purposes.
+
+
+reagent.GNF_hs-GPCR_IDT-siRNA.id - Identifies a specific siRNA targeting GPCRs within the GNF_hs-GPCR_IDT-siRNA library, preserved as a keyword field to allow precise reference matching.
+
+
+reagent.GNF_hs-GPCR_IDT-siRNA.relationship - Defines the nature of interaction or connection that the siRNA has with GPCRs or other biological components, saved as text for rich, descriptive content.
+
+
+reagent.GNF_hs-ORFeome1_1_reads.id - A unique identifier for reads from the GNF human ORFeome version 1.1 library, categorized as a keyword to support efficient data retrieval.
+
+
+reagent.GNF_hs-ORFeome1_1_reads.relationship - Describes the functional or experimental relationship of the ORFeome reads to other genomic elements, captured as text to facilitate complex relationship mapping.
+
+
+reagent.GNF_hs-Origene.id - A unique identifier for entities within the GNF human Origene reagents, classified as a keyword for straightforward indexing and querying.
+
+
+reagent.GNF_hs-Origene.relationship - This field details the link or association between the Origene reagents and other genetic elements or processes, stored as a text field to allow comprehensive explanations.
+
+
+reagent.GNF_hs-druggable_lenti-shRNA.id - A unique identifier for a lentivirus-delivered short hairpin RNA (shRNA) targeting human druggable genome sequences.
+
+
+reagent.GNF_hs-druggable_lenti-shRNA.relationship - Describes the relationship or functional role of the lentivirus-delivered shRNA within the context of the experiment or study, often indicating its associative nature with the target or process being studied.
+
+
+reagent.GNF_hs-druggable_plasmid-shRNA.id - A unique identifier for a plasmid-delivered short hairpin RNA (shRNA) targeting human druggable genome sequences.
+
+
+reagent.GNF_hs-druggable_plasmid-shRNA.relationship - Describes the relationship or functional role of the plasmid-delivered shRNA within the research, such as its function or interrelation with other experimental elements.
+
+
+reagent.GNF_hs-druggable_siRNA.id - A unique identifier for a small interfering RNA (siRNA) designed to target human druggable genome sequences.
+
+
+reagent.GNF_hs-druggable_siRNA.relationship - Details the role or purpose of the siRNA within the experiment, such as its interaction or role in the process it influences or regulates.
+
+
+reagent.GNF_hs-oncomine_IDT-siRNA.id - A unique identifier for a small interfering RNA (siRNA) provided by Integrated DNA Technologies, specifically targeting human oncogenes or cancer-related sequences.
+
+
+reagent.GNF_hs-oncomine_IDT-siRNA.relationship - Describes how the siRNA is related to the overall function or objective of the study, possibly specifying its target interaction or mechanism of action within oncogenic pathways.
+
+
+reagent.GNF_hs-pkinase_IDT-siRNA.id - A unique identifier for a small interfering RNA (siRNA) from Integrated DNA Technologies aimed at targeting human protein kinases.
+
+
+reagent.GNF_hs-pkinase_IDT-siRNA.relationship - Indicates the association or mechanism of the siRNA in modulating or regulating protein kinase activity within a biological or experimental setup.
+
+
+reagent.GNF_hs_LentiORF-HA-MYC.id - This field contains the unique identifier for the reagent GNF_hs_LentiORF-HA-MYC. It is a keyword that uniquely identifies the lentiviral ORF clone tagged with HA-MYC used in experiments or databases.
+
+
+reagent.GNF_hs_LentiORF-HA-MYC.relationship - This field describes the relationship or function of the reagent GNF_hs_LentiORF-HA-MYC in the context of an experiment or database. It provides contextual information about how this reagent is used or interacts with other components.
+
+
+reagent.GNF_hs_LentiORF-Jred.id - This field contains the unique identifier for the GNF_hs_LentiORF-Jred reagent. It is used to uniquely identify this specific lentiviral ORF clone that includes a Jred fluorescent protein tag used in research.
+
+
+reagent.GNF_hs_LentiORF-Jred.relationship - This field describes the relationship or role of the reagent GNF_hs_LentiORF-Jred in experiments or databases. It indicates how this particular reagent is related to other entities or its function in an experimental setup.
+
+
+reagent.GNF_mm+hs-MGC.id - This field holds the unique identifier for the GNF_mm+hs-MGC reagent. It is a keyword used to identify this mammalian gene collection reagent for mouse and human (mm+hs) purposes in experimental data.
+
+
+reagent.GNF_mm+hs-MGC.relationship - This field describes the relationship or role of the GNF_mm+hs-MGC reagent in an experimental or database context. It informs about the role or interaction of this reagent within a study or in assembling data.
+
+
+reagent.GNF_mm+hs_RetroCDNA.id - This field contains the unique identifier for the GNF_mm+hs_RetroCDNA reagent. It is a keyword used to identify an entry in the collection of retroviral expression constructs for mouse and human (mm+hs) cDNA libraries.
+
+
+reagent.GNF_mm+hs_RetroCDNA.relationship - This field describes the relationship or context in which the GNF_mm+hs_RetroCDNA reagent is used. It provides insight into how this cDNA reagent cooperates, interacts, or is associated with other components in a study.
+
+
+reagent.GNF_mm-GIPZ_shRNA.id - This field contains the unique identifier for the GNF_mm-GIPZ_shRNA reagent. It identifies a specific GIPZ short hairpin RNA (shRNA) used for gene silencing studies in mouse models.
+
+
+reagent.GNF_mm-GIPZ_shRNA.relationship - This field describes the relationship or role that the GNF_mm-GIPZ_shRNA reagent has within an experimental framework or dataset. It typically details its role in gene silencing or any interactions with other reagents or biological systems.
+
+
+reagent.GNF_mm-TLR_lenti_shRNA.id - Unique identifier for a lentiviral shRNA reagent targeting mouse TLR (Toll-like receptor) genes in the GNF library.
+
+
+reagent.GNF_mm-TLR_lenti_shRNA.relationship - Descriptive relationship field indicating the type of biological interaction or association the shRNA reagent targeting TLR (Toll-like receptor) genes has within the GNF library.
+
+
+reagent.GNF_mm-kinase_lenti-shRNA.id - Unique identifier for a lentiviral shRNA reagent targeting mouse kinase genes in the GNF library.
+
+
+reagent.GNF_mm-kinase_lenti-shRNA.relationship - Descriptive relationship field indicating the type of biological interaction or association the lentiviral shRNA reagent targeting kinase genes has within the GNF library.
+
+
+reagent.GNF_mm-kinase_plasmid-shRNA.id - Unique identifier for a plasmid-based shRNA reagent targeting mouse kinase genes in the GNF library.
+
+
+reagent.GNF_mm-kinase_plasmid-shRNA.relationship - Descriptive relationship field indicating the type of biological interaction or association the plasmid-based shRNA reagent targeting kinase genes has within the GNF library.
+
+
+reagent.IDT_27mer_hs_ATPase_siRNAs.id - Unique identifier for a 27-mer siRNA reagent targeting human ATPase genes, provided by IDT (Integrated DNA Technologies).
+
+
+reagent.IDT_27mer_hs_ATPase_siRNAs.relationship - Descriptive relationship field indicating the type of biological interaction or association the siRNA reagent targeting ATPase genes has within the IDT library.
+
+
+reagent.Invitrogen_IVTHSSIPKv2.id - Unique identifier for an Invitrogen siRNA reagent from the IVTHSSIPKv2 collection.
+
+
+reagent.Invitrogen_IVTHSSIPKv2.relationship - Descriptive relationship field indicating the type of biological interaction or association the siRNA reagent from the Invitrogen IVTHSSIPKv2 collection has within the study.
+
+
+reagent.MasterSecretomicsList.id - A unique identifier for entries in the MasterSecretomicsList database, which catalogs various reagents related to secretomics.
+
+
+reagent.MasterSecretomicsList.relationship - Describes the type of relationship or functional association the reagent has within the MasterSecretomicsList context, indicative of its usage or role in experiments.
+
+
+reagent.NIBRI_hs-Secretome_pDEST.id - A unique identifier for reagents associated with the NIBRI human secretome project using pDEST vectors, which are used in cloning and expression studies.
+
+
+reagent.NIBRI_hs-Secretome_pDEST.relationship - Defines the functional or experimental relationship of the reagent within the context of the NIBRI human secretome project, detailing how it's used or interacted with in studies.
+
+
+reagent.NOVART_hs-genome_siRNA.id - A unique identifier for small interfering RNA reagents from NOVART targeting the human genome, used to silence specific genes in research studies.
+
+
+reagent.NOVART_hs-genome_siRNA.relationship - Specifies the experimental relationship or effect of the siRNA reagent within the NOVART human genome project, indicating its target or usage.
+
+
+reagent.Qiagen_mouse_QMIHSINHIBv1.id - A unique identifier for Qiagen's mouse inhibitor reagents, version 1 (QMIHSINHIBv1), which are likely used to inhibit specific proteins or pathways in mice studies.
+
+
+reagent.Qiagen_mouse_QMIHSINHIBv1.relationship - Describes the inhibitory relationship or effect that the reagent has in the context of Qiagen's mouse studies, providing insight into its biological function.
+
+
+reagent.Qiagen_mouse_QMIHSMIMv1.id - A unique identifier for Qiagen's mouse microRNA mimics, version 1 (QMIHSMIMv1), used in research to mimic the function of endogenous microRNAs in mice.
+
+
+reagent.Qiagen_mouse_QMIHSMIMv1.relationship - Details the experimental relationship or effect of the microRNA mimic reagent in Qiagen mouse studies, specifying how it modulates gene expression or pathways.
+
+
+refseq.genomic - A list of RefSeq accession numbers corresponding to the genomic DNA sequences. These identifiers are used to reference the specific version of the genomic sequence in the NCBI Reference Sequence Database.
+
+
+refseq.protein - A list of RefSeq accession numbers corresponding to the protein sequences. These identifiers provide a reference to the specific version of the protein sequence in the NCBI Reference Sequence Database.
+
+
+refseq.rna - A list of RefSeq accession numbers corresponding to the RNA sequences, typically mRNA. These identifiers are used to reference the specific version of the RNA sequence in the NCBI Reference Sequence Database.
+
+
+reporter.AraGene-1_0 - A keyword indicating the reporter probe set identifier specific to the AraGene-1_0 microarray platform. This identifier represents an individual probe used to detect gene expression in Arabidopsis species.
+
+
+reporter.BovGene-1_0 - A keyword indicating the reporter probe set identifier specific to the BovGene-1_0 microarray platform. This identifier represents an individual probe used to detect gene expression in bovine species.
+
+
+reporter.CanGene-1_0 - A keyword indicating the reporter probe set identifier specific to the CanGene-1_0 microarray platform. This identifier represents an individual probe used to detect gene expression in canine species.
+
+
+reporter.ChiGene-1_0 - A keyword indicating the reporter probe set identifier specific to the ChiGene-1_0 microarray platform. This identifier represents an individual probe used to detect gene expression in chicken species.
+
+
+reporter.CyRGene-1_0 - A keyword indicating the reporter probe set identifier specific to the CyRGene-1_0 microarray platform. This identifier represents an individual probe used to detect gene expression.
+
+
+reporter.CynGene-1_0 - A keyword indicating the reporter probe set identifier specific to the CynGene-1_0 microarray platform. This identifier represents an individual probe used to detect gene expression in cynomolgus macaque.
+
+
+reporter.DroGene-1_0 - A keyword indicating the reporter probe set identifier specific to the DroGene-1_0 microarray platform. This identifier represents an individual probe used to detect gene expression in Drosophila species.
+
+
+reporter.EleGene-1_0 - This field contains an identifier for a probe set used in the EleGene-1_0 microarray platform.
+
+
+reporter.EquGene-1_0 - This field contains an identifier for a probe set used in the EquGene-1_0 microarray platform.
+
+
+reporter.FelGene-1_0 - This field contains an identifier for a probe set used in the FelGene-1_0 microarray platform.
+
+
+reporter.GNF1H - This field contains an identifier for a probe set used in the GNF1H microarray platform, which is associated with gene expression profiling.
+
+
+reporter.GNF1M - This field contains an identifier for a probe set used in the GNF1M microarray platform, which is associated with gene expression profiling.
+
+
+reporter.GuiGene-1_0 - This field contains an identifier for a probe set used in the GuiGene-1_0 microarray platform.
+
+
+reporter.HG-U133_Plus_2 - This field contains an identifier for a probe set used in the HG-U133_Plus_2 microarray platform from Affymetrix, which is widely used for transcriptome profiling of human samples.
+
+
+reporter.HG-U95Av2 - This field contains an identifier for a probe set used in the HG-U95Av2 microarray platform, another Affymetrix array for gene expression analysis.
+
+
+reporter.HG-U95B - This field contains an identifier for a probe set used in the HG-U95B microarray platform, which is part of the Affymetrix HG-U95 set designed for transcript analysis.
+
+
+reporter.HTA-2_0 - This field contains an identifier for a probe set used in the HTA-2_0 microarray platform, which is tailored for transcriptome-level expression analysis in humans.
+
+
+reporter.HuEx-1_0 - Identifier for a probe on the Affymetrix Human Exon 1.0 ST Array, which is used for comprehensive coverage of the human transcriptome at the exon level.
+
+
+reporter.HuGene-1_1 - Identifier for a probe on the Affymetrix Human Gene 1.1 ST Array, providing a way to analyze gene expression patterns across the entire human genome.
+
+
+reporter.HuGene-2_1 - Identifier for a probe on the Affymetrix Human Gene 2.1 ST Array, which allows for detailed examination of gene expression with updated genome annotations.
+
+
+reporter.MG-U74Av2 - Identifier for a probe on the Affymetrix Mouse Genome U74Av2 Array, used for analyzing gene expression in mouse samples.
+
+
+reporter.MG-U74Bv2 - Identifier for a probe on the Affymetrix Mouse Genome U74Bv2 Array, designed for expression profiling in mouse samples, complementary to U74Av2.
+
+
+reporter.MTA-1_0 - Identifier for a probe on the Affymetrix Mouse Transcriptome Array 1.0, allowing for analysis of mouse transcriptome with specific targeting of known transcripts.
+
+
+reporter.MarGene-1_0 - Identifier for a probe on the Affymetrix MarmoGene 1.0 ST Array, which is a tool for gene expression analysis in the Rhesus macaque, useful for cross-species studies.
+
+
+reporter.MoEx-1_0 - Identifier for a probe on the Affymetrix Mouse Exon 1.0 ST Array, aimed at providing comprehensive coverage of the mouse transcriptome at the exon level.
+
+
+reporter.MoGene-1_1 - Identifier for a probe on the Affymetrix Mouse Gene 1.1 ST Array, which is employed for gene-level expression analysis in mouse studies.
+
+
+reporter.MoGene-2_1 - Identifier for a probe on the Affymetrix Mouse Gene 2.1 ST Array, used to examine gene expression with enhanced annotations in mouse research.
+
+
+reporter.Mouse430_2 - This field likely refers to a specific microarray platform for mouse gene expression analysis, possibly by Affymetrix, characterized by a unique identifier representing a probe or probeset used for measuring the expression level of specific genes.
+
+
+reporter.PorGene-1_0 - This field denotes a specific reporter or probe set identifier used in the Porcine Genome 1.0 array platform, which is designed to measure gene expression in pig samples.
+
+
+reporter.RCnGene-1_0 - This represents a reporter or probe set identifier utilized in the Rcngene 1.0 array system, which is likely used for expression profiling in a specific organism or group, possibly related to rodents or rat models.
+
+
+reporter.RG-U34A - Pertains to a specific Affymetrix GeneChip designed for rat genome analysis; the identifier represents a probe set used for transcript level detection across the RG-U34A microarray platform.
+
+
+reporter.RG-U34B - Similar to RG-U34A, this field denotes a probe set identifier within the RG-U34B Affymetrix platform, enabling gene expression studies specifically in rat models.
+
+
+reporter.RJpGene-1_0 - This field suggests a probe set identifier associated with the RJpGene 1.0 platform, potentially utilized for gene expression studies in a particular species or research setting.
+
+
+reporter.RUSGene-1_0 - Identifies a particular probe or reporter set on the RUSGene 1.0 platform, likely employed for expression analysis in a specific research or clinical context, possibly focusing on Russian or Eurasian models.
+
+
+reporter.RaEx-1_0 - Refers to a probe set identifier in the Agilent RaEx-1.0 platform, which is often used for exonic gene expression profiling, likely in rat or similar species models.
+
+
+reporter.RaGene-1_1 - A probe set identifier related to the RaGene-1.1 array series, which is typically employed for comprehensive rat gene expression profiling, possibly adapting to updates or version improvements.
+
+
+reporter.RaGene-2_1 - It signifies a probe set on the RaGene-2.1 platform, which likely provides enhanced or more detailed expression profiling capabilities compared to the previous versions in rat research studies.
+
+
+reporter.RabGene-1_0 - Unique identifier for a probe set on the RabGene-1_0 microarray platform, used for measuring gene expression in biological samples.
+
+
+reporter.Rat230_2 - Unique identifier for a probe set on the Rat230_2 microarray platform, often used for rat species gene expression profiling.
+
+
+reporter.RheGene-1_0 - Unique identifier for a probe set on the RheGene-1_0 microarray platform, designed for gene expression analysis in rhesus macaque studies.
+
+
+reporter.SoyGene-1_0 - Unique identifier for a probe set on the SoyGene-1_0 microarray platform, used for assessing gene expression in soybean samples.
+
+
+reporter.ZebGene-1_0 - Unique identifier for a probe set on the ZebGene-1_0 microarray platform, suited for zebrafish gene expression research.
+
+
+reporter.snowball - A keyword field typically indicating a specific subset or category within a larger dataset, possibly associated with a specialized analysis or experiment.
+
+
+retired - A numerical field indicating whether a particular entry or record has been deprecated or discontinued in the database.
+
+
+smpdb - A textual field that may contain data related to the Small Molecule Pathway Database, which provides information on metabolic and signaling pathways.
+
+
+summary - A detailed textual description summarizing the role, function, and relevance of a particular gene or protein in biological processes.
+
+
+symbol - The official abbreviated identifier or symbol for a gene, often used for quick reference and consistent labeling across databases.
+
+
+taxid - The taxonomic identifier for the organism associated with the gene, typically representing a specific species. It is a numeric identifier assigned by databases like NCBI.
+
+
+type_of_gene - A keyword indicating the category of the gene, such as 'protein-coding', 'rRNA', 'snRNA', etc. It describes the functional classification of the gene.
+
+
+umls.cui - A unique concept identifier from the Unified Medical Language System (UMLS) that links the gene to a specific concept in biomedical literature.
+
+
+umls.protein_cui - A unique concept identifier from the UMLS specifically related to the protein product of the gene, linking it to a concept in biomedical literature.
+
+
+unigene - An identifier for the UniGene cluster associated with the gene, representing a set of related sequences meant to be a non-redundant set of transcripts.
+
+
+uniprot.Swiss-Prot - A stable identifier for a Swiss-Prot entry corresponding to the gene, representing a manually reviewed protein sequence and functional information.
+
+
+uniprot.TrEMBL - An identifier for a TrEMBL entry corresponding to the gene, representing a computationally analyzed protein sequence that has not been manually reviewed.
+
+
+wikipathways - Text field containing information or identifiers related to the gene in WikiPathways, a resource for biological pathways curated by the community.
+
+
+wikipedia.url_stub - A text field containing the stub of the URL for the Wikipedia page related to the gene or protein, used to easily build a full URL to access more information.
+
+
+yeastcyc - Text field containing information or identifiers specific to YeastCyc, a database of metabolic pathways and enzymes in yeast, relevant to the gene.
+
+
