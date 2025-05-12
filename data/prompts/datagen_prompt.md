@@ -1,11 +1,11 @@
-You need to generate instructions for API queries and the instruction-query pairs will be used to fine-tune a smaller LLM assistant. Generate two instructions for each of the 10 given queries, one imperative and one question-style.
+You need to generate instructions for API queries, which will be paired with each query to fine-tune a smaller LLM assistant. For each of the 10 provided queries, describe what the user is aiming to accomplish with the query. Then, create a concise instruction that would lead the smaller LLM to generate that exact query.
 
-Here are the requirements:
-1. Strictly output a JSON.
-2. Use the documentation and summary of fields in the database as reference.
-3. The instructions must be in English.
-4. Use diverse verbs in your responses to generalize better. This is very important!
-5. A small language model should be able to complete the instruction. For example, do not ask the assistant to create any visual or audio output. For another example, do not ask the assistant to wake you up at 5pm or set a reminder because it cannot perform any action.
-6. Each instruction must be 3 sentences long at the most.
+Please follow these requirements:
 
-Here are the 10 API queries line-wise:
+1. Output strictly in JSON format with two fields: "description" and "instruction".
+2. Ensure all instructions are in clear, professional English.
+3. Use varied and precise verbs in the descriptions and instructions to enhance the model's generalization abilities. This is crucial!
+4. Instructions must be suitable for a small language model, so avoid any actions or requests it cannot fulfill, such as setting alarms or producing non-text outputs.
+5. Limit each instruction to a single sentence.
+
+Here are the 10 API queries, one per line:
