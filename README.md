@@ -1,8 +1,8 @@
-# Query Assistant
+# 📝 Query Assistant
 
 ## Overview
 
-This document provides a high-level overview of the project directory structure. At this stage, all the experiments only use MyGene. However, with the goal to scale this to other APIs, datagen and data_annotate notebooks have been partially altered to accommodate more APIs. This project uses `torchtune` for fine-tuning. However, HuggingFace Transformers was later determined to provide more flexible and robust API. Therefore, the project will benefit from refactoring to HF.
+This document provides an overview of the project's directory structure and execution. At this stage, all the experiments only use MyGene. However, with the goal to scale this to other APIs, datagen and data_annotate notebooks have been partially altered to accommodate more APIs. This project uses `torchtune` for fine-tuning.
 
 Throughout this project, _instructions_ refer to the command a human gives to an LLM to do something. _Query_ refers to a typical API query sent to BioThings API to get some data.
 
