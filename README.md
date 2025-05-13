@@ -1,4 +1,4 @@
-# Transition Document
+# Query Assistant
 
 ## Overview
 
