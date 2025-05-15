@@ -57,8 +57,8 @@ Data, models, and pickled response files are shared as tar.gz files for efficien
 ## Typical Workflow
 0. Add OpenAI API key to `.env` file, install dependencies from `requirements.txt`
 1. For a target API service, run the data_annotate notebook to get its schema annotated by OpenAI chatbots. Also, download the docs for this API service. (outputs => annotated schema, docs)
-2. You may skip part 2 of this notebook if you do not intend to fine-tune. Run the datagen notebook to filter the target API logs and get largely unique queries. The second part of this notebook produces instruction-query pairs for fine-tuning. This will likely consume a huge amount of GPU memory. (outputs => "good" queries, instruction-query pairs for fine-tuning).
-3. (optional) Fine-tuning is currently done with a torchtune command with a certain config.
+2. You may skip part 2 of this notebook if you do not intend to fine-tune. Run the datagen notebook to filter the target API logs and get _largely_ unique queries. The second part of this notebook produces instruction-query pairs for fine-tuning. This will likely consume a huge amount of GPU memory. (outputs => "good" queries, instruction-query pairs for fine-tuning).
+3. (optional) Fine-tuning is currently done with a torchtune command with a certain config. However, it is recommended to switch to HuggingFace Transformers library to fine-tune.
 4. Run the eval_lm script with the required setting. You may use RAG, ICL, a fine-tuned model etc. The script stores the LLM responses in a pickle file so you may evaluate the generated responses later (output => pickle file of LLM generated responses).
 5. Run the evaluate notebook to score the responses from step 3 against the test set generated in step 2.
 
